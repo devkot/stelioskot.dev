@@ -23,7 +23,7 @@ export const Header = () => {
       <Toolbar>
         <Link to="/">Devkot</Link>
         <Button color="inherit" className={classes.menuButton}>
-          <Link to="/discover">About</Link>
+          <Link to="/about">About</Link>
         </Button>
         <Button color="inherit" className={classes.menuButton}>
           <Link to="/blog">Blog</Link>

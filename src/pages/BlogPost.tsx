@@ -45,7 +45,7 @@ const BlogPost: React.FunctionComponent = () => {
       <Typography variant="h4" className={classes.blogTitle}>
         Athens
       </Typography>
-      <Box>Uni is the best Maybe right some shit here and there</Box>
+      <Box>Uni is the best Maybe write some shit here and there</Box>
     </Container>
   );
 };

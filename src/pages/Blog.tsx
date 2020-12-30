@@ -45,7 +45,7 @@ const Blog: React.FunctionComponent = () => {
       <Grid container spacing={3}>
         <Grid item xs={12} sm={6} md={4}>
           <Card>
-            <CardActionArea>
+            <CardActionArea component={Link} to="/blog/what-makes-you-tick">
               <CardMedia title="Think" />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">

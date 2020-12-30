@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  Typography,
-  Box,
-  Container,
-} from "@material-ui/core";
+import { Typography, Box, Container } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
@@ -28,15 +24,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const BlogPost: React.FunctionComponent = () => {
+const BlogPost: React.FunctionComponent<{
+  postTitle: string;
+  content: string;
+}> = ({ postTitle, content }) => {
   const classes = useStyles();
 
   return (
     <Container maxWidth="lg" className={classes.blogsContainer}>
       <Typography variant="h4" className={classes.blogTitle}>
-        Athens
+        {postTitle}
       </Typography>
-      <Box>Uni is the best Maybe write some shit here and there</Box>
+      <Box>{content}</Box>
     </Container>
   );
 };

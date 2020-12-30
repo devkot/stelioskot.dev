@@ -1,17 +1,8 @@
 import React from "react";
 import {
-  Paper,
-  CardMedia,
-  List,
-  Toolbar,
   Typography,
-  AppBar,
   Box,
   Container,
-  Grid,
-  Card,
-  CardActionArea,
-  CardContent,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 

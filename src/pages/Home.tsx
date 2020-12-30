@@ -1,21 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-import {
-  Paper,
-  CardMedia,
-  List,
-  Toolbar,
-  Typography,
-  AppBar,
-  Box,
-  Container,
-  Grid,
-  Card,
-  CardActionArea,
-  CardContent,
-  CardActions,
-} from "@material-ui/core";
+import { Typography, Box, Container } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({

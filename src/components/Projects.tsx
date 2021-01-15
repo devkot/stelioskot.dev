@@ -1,10 +1,7 @@
 import React from "react";
 
-import { Typography, Box, Container } from "@material-ui/core";
+import { Typography, Box } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import About from "../components/About";
-import Projects from "../components/Projects";
-import Intro from "../components/Intro";
 
 const useStyles = makeStyles((theme) => ({
   homeContainer: {
@@ -22,24 +19,20 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Home: React.FunctionComponent = () => {
+const Projects: React.FunctionComponent = () => {
   const classes = useStyles();
 
   return (
-    <Container maxWidth="lg" className={classes.homeContainer} id="page-top">
-      <Intro />
-      <About />
-      <Projects />
-
+    <Box id="projects">
       <Typography variant="h4" className={classes.homeTitle}>
-        <Box id="projects">Contact Me</Box>
+        <Box>Projects</Box>
         <Typography variant="h6" className={classes.homeContent}>
-          <Box>Email form here</Box>
+          <Box>Projects I've enjoyed</Box>
           {[...Array(10)].fill(<Box>Placeholder text</Box>)}
         </Typography>
       </Typography>
-    </Container>
+    </Box>
   );
 };
 
-export default Home;
+export default Projects;

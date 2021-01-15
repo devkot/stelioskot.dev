@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 800,
     paddingTop: theme.spacing(10),
     paddingBottom: theme.spacing(10),
+    "text-align": "center",
   },
   homeContent: {
     fontWeight: 100,

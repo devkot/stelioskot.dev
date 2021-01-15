@@ -9,9 +9,6 @@ const useStyles = makeStyles((theme: Theme) => ({
   menuButton: {
     marginRight: theme.spacing(2),
   },
-  aboutMe: {
-    marginLeft: 0,
-  },
   pushRight: {
     flex: 1,
   },
@@ -26,8 +23,11 @@ export const Header = () => {
         <Button color="inherit" className={classes.menuButton} href="#page-top">
           <Typography className={classes.pushRight}>Devkot</Typography>
         </Button>
-        <Button color="inherit" href="#about" className={classes.aboutMe}>
+        <Button color="inherit" href="#about" className={classes.menuButton}>
           <Typography className={classes.pushRight}>About</Typography>
+        </Button>
+        <Button color="inherit" href="#projects" className={classes.menuButton}>
+          <Typography className={classes.pushRight}>Projects</Typography>
         </Button>
       </Toolbar>
     </AppBar>

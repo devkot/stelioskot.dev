@@ -5,15 +5,17 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   homeContainer: {
-    paddingTop: theme.spacing(3),
+    paddingTop: theme.spacing(10),
   },
   homeTitle: {
     fontWeight: 800,
-    paddingBottom: theme.spacing(3),
+    paddingTop: theme.spacing(10),
+    paddingBottom: theme.spacing(10),
   },
   homeContent: {
     fontWeight: 100,
-    paddingBottom: theme.spacing(3),
+    paddingTop: theme.spacing(10),
+    paddingBottom: theme.spacing(10),
   },
 }));
 
@@ -23,13 +25,39 @@ const Home: React.FunctionComponent = () => {
   return (
     <Container maxWidth="lg" className={classes.homeContainer}>
       <Typography variant="h4" className={classes.homeTitle}>
-        <Box>Welcome to my corner on the Web.</Box>
+        <Box id="page-top">Stelios Kotanidis</Box>
+        <Typography variant="h6" className={classes.homeContent}>
+          <Box>Fullstack Software Engineer</Box>
+
+          <Box>Passionate about tech</Box>
+        </Typography>
+      </Typography>
+
+      <Typography variant="h4" className={classes.homeTitle}>
+        <Box id="about">About Me</Box>
         <Typography variant="h6" className={classes.homeContent}>
           <Box>
-            This is going to be a space for me to express myself both personally
-            and professionally.
+            I'm an experienced Fullstack Software Engineer that loves delivering
+            technical solutions to customer problems. Currently based in
+            Edinburgh, UK and working for an Education Technology startup.
           </Box>
-          <Box></Box>
+          {[...Array(10)].fill(<Box>Placeholder text</Box>)}
+        </Typography>
+      </Typography>
+
+      <Typography variant="h4" className={classes.homeTitle}>
+        <Box id="projects">Projects</Box>
+        <Typography variant="h6" className={classes.homeContent}>
+          <Box>Projects I've enjoyed</Box>
+          {[...Array(10)].fill(<Box>Placeholder text</Box>)}
+        </Typography>
+      </Typography>
+
+      <Typography variant="h4" className={classes.homeTitle}>
+        <Box id="projects">Contact Me</Box>
+        <Typography variant="h6" className={classes.homeContent}>
+          <Box>Email form here</Box>
+          {[...Array(10)].fill(<Box>Placeholder text</Box>)}
         </Typography>
       </Typography>
     </Container>

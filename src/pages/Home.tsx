@@ -26,7 +26,7 @@ const Home: React.FunctionComponent = () => {
   const classes = useStyles();
 
   return (
-    <Container maxWidth="lg" className={classes.homeContainer}>
+    <Container maxWidth="lg" className={classes.homeContainer} id="page-top">
       <Intro />
       <About />
       <Projects />

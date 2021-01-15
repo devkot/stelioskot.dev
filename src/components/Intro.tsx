@@ -23,14 +23,16 @@ const Intro: React.FunctionComponent = () => {
   const classes = useStyles();
 
   return (
-    <Typography variant="h4" className={classes.homeTitle}>
-      <Box id="page-top">Stelios Kotanidis</Box>
-      <Typography variant="h6" className={classes.homeContent}>
-        <Box>Fullstack Software Engineer</Box>
+    <Box>
+      <Typography variant="h4" className={classes.homeTitle}>
+        <Box>Stelios Kotanidis</Box>
+        <Typography variant="h6" className={classes.homeContent}>
+          <Box>Fullstack Software Engineer</Box>
 
-        <Box>Passionate about tech</Box>
+          <Box>Passionate about tech</Box>
+        </Typography>
       </Typography>
-    </Typography>
+    </Box>
   );
 };
 

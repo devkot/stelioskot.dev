@@ -23,13 +23,15 @@ const Projects: React.FunctionComponent = () => {
   const classes = useStyles();
 
   return (
-    <Typography variant="h4" className={classes.homeTitle}>
-      <Box id="projects">Projects</Box>
-      <Typography variant="h6" className={classes.homeContent}>
-        <Box>Projects I've enjoyed</Box>
-        {[...Array(10)].fill(<Box>Placeholder text</Box>)}
+    <Box id="projects">
+      <Typography variant="h4" className={classes.homeTitle}>
+        <Box>Projects</Box>
+        <Typography variant="h6" className={classes.homeContent}>
+          <Box>Projects I've enjoyed</Box>
+          {[...Array(10)].fill(<Box>Placeholder text</Box>)}
+        </Typography>
       </Typography>
-    </Typography>
+    </Box>
   );
 };
 

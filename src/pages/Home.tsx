@@ -1,10 +1,11 @@
 import React from "react";
 
-import { Typography, Box, Container } from "@material-ui/core";
+import { Container } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import About from "../components/About";
 import Projects from "../components/Projects";
 import Intro from "../components/Intro";
+import ContactMe from "../components/ContactMe";
 
 const useStyles = makeStyles((theme) => ({
   homeContainer: {
@@ -31,14 +32,7 @@ const Home: React.FunctionComponent = () => {
       <Intro />
       <About />
       <Projects />
-
-      <Typography variant="h4" className={classes.homeTitle}>
-        <Box id="projects">Contact Me</Box>
-        <Typography variant="h6" className={classes.homeContent}>
-          <Box>Email form here</Box>
-          {[...Array(10)].fill(<Box>Placeholder text</Box>)}
-        </Typography>
-      </Typography>
+      <ContactMe />
     </Container>
   );
 };

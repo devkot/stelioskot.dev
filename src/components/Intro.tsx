@@ -31,7 +31,10 @@ const Intro: React.FunctionComponent = () => {
         <Typography variant="h6" className={classes.homeContent}>
           <Box>Fullstack Software Engineer</Box>
 
-          <Box>Passionate about tech</Box>
+          <Box>
+            Endlessly Curious, Adventurous, Technologist. Always seeking the
+            next experience and questioning the norm.
+          </Box>
         </Typography>
       </Typography>
     </Box>

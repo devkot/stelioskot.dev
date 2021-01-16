@@ -32,9 +32,15 @@ const About: React.FunctionComponent = () => {
           <Box>
             I'm an experienced Fullstack Software Engineer that loves delivering
             technical solutions to customer problems. Currently based in
-            Edinburgh, UK and working for an Education Technology startup.
+            Edinburgh, UK and working for Administrate, an Education Technology
+            startup.
           </Box>
-          {[...Array(10)].fill(<Box>Placeholder text</Box>)}
+          <Box>
+            I've participated in a variety of projects trying to help companies
+            manage and improve their learning capabilities. Recently, I've
+            started leading the R&D team in building an LMS and a Data Pipeline
+            to transfer learner data.
+          </Box>
         </Typography>
       </Typography>
     </Box>

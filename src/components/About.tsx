@@ -37,9 +37,9 @@ const About: React.FunctionComponent = () => {
           </Box>
           <Box>
             I've participated in a variety of projects trying to help companies
-            manage and improve their learning capabilities. Recently, I've
-            started leading the R&D team in building an LMS and a Data Pipeline
-            to transfer learner data.
+            manage and improve their learning capabilities. I help teams design
+            and deliver solutions across the stack, from infrastructure to UI
+            with a soft spot for building robust, clean APIs.
           </Box>
         </Typography>
       </Typography>

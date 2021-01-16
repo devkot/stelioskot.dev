@@ -9,22 +9,13 @@ import {
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme: Theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(1),
-  },
-  pushRight: {
-    flex: 1,
-  },
   appBar: {
     top: "auto",
     bottom: 0,
   },
 }));
 
-export const Footer = () => {
+const Footer = () => {
   const classes = useStyles();
 
   return (
@@ -37,3 +28,5 @@ export const Footer = () => {
     </AppBar>
   );
 };
+
+export default Footer;

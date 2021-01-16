@@ -5,13 +5,13 @@ import Routes from "./Routes";
 import { Basic } from "./layouts/Basic";
 
 const App: React.FunctionComponent = () => (
-  <div className="App">
+  <React.Fragment>
     <Router>
       <Basic>
         <Routes />
       </Basic>
     </Router>
-  </div>
+  </React.Fragment>
 );
 
 export default App;

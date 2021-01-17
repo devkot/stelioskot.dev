@@ -35,46 +35,48 @@ const ContactMe: React.FunctionComponent = () => {
   const classes = useStyles();
 
   return (
-    <Paper id="about" elevation={0}>
-      <Typography variant="h4" className={classes.homeTitle}>
-        <Box id="projects">Contact Me</Box>
-      </Typography>
-      <Typography variant="h6" className={classes.homeContent}>
-        <Box>
-          Do you want something built or simply want to connect? Reach out to me
-          using any of the ways below!
-        </Box>
-        <Grid>
-          <Grid
-            item
-            key="Email"
-            component="a"
-            href="mailto:stelioskotanidis@hotmail.com"
-            className={classes.socialButton}
-          >
-            <MailOutlineIcon />
+    <Box id="contact-me" className={classes.homeContainer}>
+      <Paper elevation={0}>
+        <Typography variant="h4" className={classes.homeTitle}>
+          <Box id="projects">Contact Me</Box>
+        </Typography>
+        <Typography variant="h6" className={classes.homeContent}>
+          <Box>
+            Do you want something built or simply want to connect? Reach out to
+            me using any of the ways below!
+          </Box>
+          <Grid>
+            <Grid
+              item
+              key="Email"
+              component="a"
+              href="mailto:stelioskotanidis@hotmail.com"
+              className={classes.socialButton}
+            >
+              <MailOutlineIcon />
+            </Grid>
+            <Grid
+              item
+              key="LinkedIn"
+              component="a"
+              href="https://www.linkedin.com/in/stylianos-kotanidis/"
+              className={classes.socialButton}
+            >
+              <LinkedInIcon />
+            </Grid>
+            <Grid
+              item
+              key="GitHub"
+              component="a"
+              href="https://github.com/devkot"
+              className={classes.socialButton}
+            >
+              <GitHubIcon />
+            </Grid>
           </Grid>
-          <Grid
-            item
-            key="LinkedIn"
-            component="a"
-            href="https://www.linkedin.com/in/stylianos-kotanidis/"
-            className={classes.socialButton}
-          >
-            <LinkedInIcon />
-          </Grid>
-          <Grid
-            item
-            key="GitHub"
-            component="a"
-            href="https://github.com/devkot"
-            className={classes.socialButton}
-          >
-            <GitHubIcon />
-          </Grid>
-        </Grid>
-      </Typography>
-    </Paper>
+        </Typography>
+      </Paper>
+    </Box>
   );
 };
 

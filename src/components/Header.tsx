@@ -29,6 +29,13 @@ const Header = () => {
         <Button color="inherit" href="#projects" className={classes.menuButton}>
           <Typography className={classes.pushRight}>Projects</Typography>
         </Button>
+        <Button
+          color="inherit"
+          href="#contact-me"
+          className={classes.menuButton}
+        >
+          <Typography className={classes.pushRight}>Contact</Typography>
+        </Button>
       </Toolbar>
     </AppBar>
   );

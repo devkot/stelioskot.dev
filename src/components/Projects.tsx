@@ -68,9 +68,19 @@ const Projects: React.FunctionComponent = () => {
                 contribution too!
               </Grid>
               <Grid item>
+                5G. I believe 5G is opening lots of doors for accomodating the
+                ever growing number of IoT devices that can have a positive
+                impact in our daily lives, such as health metrics sensors for
+                example. Despite being a code geek, I'm still fascinated by
+                Networks and its advancements like Software Defined Networks.
+                The endless options of this next generation tech also inspired
+                my thesis on "Network Caching for 5G Systems".
+              </Grid>
+              <Grid item>
                 Discovering things in general. I've always found it fascinating
-                finding out about something new. I'm currently expanding my
-                photography skills and I'm learning how to play the banjo.
+                finding out about something new. I love travelling and exploring
+                new places, along with my camera which allows me to capture
+                moments and experiences.
               </Grid>
             </Typography>
           </Grid>
@@ -105,7 +115,25 @@ const Projects: React.FunctionComponent = () => {
                   <LinkTo to="https://material-ui.com/" title="Material UI" />{" "}
                   and <LinkTo to="https://reactjs.org/" title="React.js" /> in
                   order to work on my creative skills building a personal
-                  website from.
+                  website.
+                </Grid>
+                <Grid item>
+                  One of the projects I've enjoyed the most was building a{" "}
+                  <LinkTo
+                    to="https://github.com/devkot/SearchEngine"
+                    title="Distributed Search Engine"
+                  />{" "}
+                  from scratch using C for a university Systems Programming
+                  course. It really helped me to avoid treating most popular Web
+                  Server frameworks as a black box! It consists of a
+                  multithreaded web server to serve the content and a Crawler to
+                  index the pages using a{" "}
+                  <LinkTo
+                    to="https://en.wikipedia.org/wiki/Trie"
+                    title="Trie"
+                  />{" "}
+                  for quick lookups. IPC communication is handled using Named
+                  Pipes (FIFOs)
                 </Grid>
               </Grid>
             </Typography>

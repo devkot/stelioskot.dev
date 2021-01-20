@@ -41,9 +41,13 @@ const About: React.FunctionComponent = () => {
           </Box>
           <Box>
             I've participated in a variety of projects trying to help companies
-            manage and improve their learning capabilities. I help teams design
-            and deliver solutions across the stack, from infrastructure to UI
-            with a soft spot for building robust, clean APIs.
+            orchestrate and promote their learning. I work with teams to
+            architect and deliver solutions across the stack, from the
+            underlying infrastructure to the UI with a soft spot for building
+            robust, clean APIs.
+          </Box>
+          <Box>
+            
           </Box>
         </Typography>
       </Paper>

@@ -33,11 +33,9 @@ const Intro: React.FunctionComponent = () => {
           <Box>Stelios Kotanidis</Box>
         </Typography>
         <Typography variant="h6" className={classes.homeContent}>
-          <Box>Fullstack Software Engineer</Box>
-
           <Box>
-            Endlessly Curious, Adventurous, Technologist. Always seeking the
-            next experience and questioning the norm.
+            Adventurer, Creator, Endlessly Curious. Always seeking the next
+            experience and questioning the norm.
           </Box>
         </Typography>
       </Paper>

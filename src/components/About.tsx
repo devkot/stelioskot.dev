@@ -47,7 +47,8 @@ const About: React.FunctionComponent = () => {
             robust, clean APIs.
           </Box>
           <Box>
-            
+            I'm always looking for opportunities to expand my horizons,
+            challenge myself and learn about new technologies.
           </Box>
         </Typography>
       </Paper>

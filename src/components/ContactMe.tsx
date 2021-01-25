@@ -61,6 +61,8 @@ const ContactMe: React.FunctionComponent = () => {
               key="LinkedIn"
               component="a"
               href="https://www.linkedin.com/in/stylianos-kotanidis/"
+              target="_blank"
+              rel="noopener noreferrer"
               className={classes.socialButton}
             >
               <LinkedInIcon />
@@ -71,6 +73,7 @@ const ContactMe: React.FunctionComponent = () => {
               component="a"
               href="https://github.com/devkot"
               target="_blank"
+              rel="noopener noreferrer"
               className={classes.socialButton}
             >
               <GitHubIcon />

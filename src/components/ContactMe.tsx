@@ -25,9 +25,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     color: theme.palette.primary.main,
   },
   socialButton: {
-    paddingTop: theme.spacing(10),
-    marginRight: theme.spacing(10),
-    paddingBottom: theme.spacing(10),
+    padding: theme.spacing(2),
+  },
+  root: {
+    flexGrow: 1,
   },
 }));
 
@@ -45,7 +46,7 @@ const ContactMe: React.FunctionComponent = () => {
             Do you want something built or simply want to connect? Reach out to
             me using any of the ways below!
           </Box>
-          <Grid>
+          <Grid container justify="center" className={classes.root}>
             <Grid
               item
               key="Email"
@@ -69,6 +70,7 @@ const ContactMe: React.FunctionComponent = () => {
               key="GitHub"
               component="a"
               href="https://github.com/devkot"
+              target="_blank"
               className={classes.socialButton}
             >
               <GitHubIcon />

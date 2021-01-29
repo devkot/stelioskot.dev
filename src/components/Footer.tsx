@@ -13,6 +13,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     top: "auto",
     bottom: 0,
   },
+  toolbar: {
+    justifyContent: "center",
+  },
 }));
 
 const Footer = () => {
@@ -21,8 +24,8 @@ const Footer = () => {
   return (
     <AppBar position="fixed" color="primary" className={classes.appBar}>
       <Container maxWidth="md">
-        <Toolbar>
-          <Typography>&copy; 2020 Devkot</Typography>
+        <Toolbar className={classes.toolbar}>
+          <Typography>&copy; 2021 Stelios Kotanidis</Typography>
         </Toolbar>
       </Container>
     </AppBar>

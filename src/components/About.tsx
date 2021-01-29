@@ -40,10 +40,10 @@ const About: React.FunctionComponent = () => {
             startup.
           </Box>
           <Box>
-            I've participated in a variety of projects trying to help companies
-            orchestrate and promote their learning. I work with teams to
+            I've participated in a variety of projects helping companies
+            orchestrate and promote their training. I work with teams to
             architect and deliver solutions across the stack, from the
-            underlying infrastructure to the UI with a soft spot for building
+            underlying infrastructure to the UI, with a soft spot for building
             robust, clean APIs.
           </Box>
           <Box>

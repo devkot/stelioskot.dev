@@ -75,9 +75,9 @@ const Projects: React.FunctionComponent = () => {
                   <Grid item>
                     5G. I believe 5G is opening lots of doors for accomodating
                     the ever growing number of IoT devices that can have a
-                    positive impact in our daily lives, such as health metrics
+                    positive impact in our daily lives, such as health metric
                     sensors for example. Despite being a code geek, I'm still
-                    fascinated by Networks and its advancements like Software
+                    fascinated by Networks and its advancements, like Software
                     Defined Networks. The endless options of this next
                     generation tech also inspired my thesis on "Network Caching
                     for 5G Systems".
@@ -87,8 +87,8 @@ const Projects: React.FunctionComponent = () => {
                   <Grid item>
                     Discovering things in general. I've always found it
                     fascinating finding out about something new. I love
-                    travelling and exploring new places, along with my camera
-                    which allows me to capture moments and experiences.
+                    travelling and exploring new places, with my camera in hand,
+                    capturing moments and experiences.
                   </Grid>
                 </li>
               </ul>
@@ -115,9 +115,9 @@ const Projects: React.FunctionComponent = () => {
                 </li>
                 <li>
                   <Grid item>
-                    Led the R&D team in unifying 3 existing versions of an LMS
-                    and building a Data Pipeline to efficiently transfer learner
-                    data.
+                    Led the R&D team in unifying 3 existing legacy versions of
+                    an LMS and in building a flexible Data Pipeline to
+                    efficiently transfer learner data.
                   </Grid>
                 </li>
                 <li>
@@ -138,8 +138,8 @@ const Projects: React.FunctionComponent = () => {
                         title="Material UI"
                       />{" "}
                       and <LinkTo to="https://reactjs.org/" title="React.js" />{" "}
-                      in order to work on my creative skills building a personal
-                      website.
+                      in order to work on my creative skills by building a
+                      personal website.
                     </Grid>
                   </li>
                   <li>
@@ -152,14 +152,14 @@ const Projects: React.FunctionComponent = () => {
                       from scratch using C for a university Systems Programming
                       course. It really helped me to avoid treating most popular
                       Web Server frameworks as a black box! It consists of a
-                      multithreaded web server to serve the content and a
-                      Crawler to index the pages using a{" "}
+                      multithreaded web server serving the content and a Crawler
+                      to index the pages using a{" "}
                       <LinkTo
                         to="https://en.wikipedia.org/wiki/Trie"
                         title="Trie"
                       />{" "}
                       for quick lookups. IPC communication is handled using
-                      Named Pipes (FIFOs)
+                      Named Pipes (FIFOs).
                     </Grid>
                   </li>
                 </ul>

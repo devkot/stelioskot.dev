@@ -27,7 +27,7 @@ const Intro: React.FunctionComponent = () => {
   const classes = useStyles();
 
   return (
-    <Box className={classes.homeContainer}>
+    <Box className={classes.homeContainer} id="page-top">
       <Paper elevation={0}>
         <Typography variant="h4" className={classes.homeTitle}>
           <Box>Stelios Kotanidis</Box>

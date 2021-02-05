@@ -17,22 +17,46 @@ const useStyles = makeStyles((theme: Theme) => ({
 const Header = () => {
   const classes = useStyles();
 
+  const handleSectionClick = (section: string) => (
+    event: React.MouseEvent<HTMLButtonElement>
+  ) => {
+    const anchor = (
+      (event.target as HTMLDivElement).ownerDocument || document
+    ).querySelector(section);
+
+    if (anchor) {
+      anchor.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  };
+
   return (
     <AppBar position="sticky" className={classes.root}>
       <Toolbar>
-        <Button color="inherit" className={classes.menuButton} href="#page-top">
+        <Button
+          color="inherit"
+          className={classes.menuButton}
+          onClick={handleSectionClick("#page-top")}
+        >
           <Typography className={classes.pushRight}>Devkot</Typography>
         </Button>
-        <Button color="inherit" href="#about" className={classes.menuButton}>
+        <Button
+          color="inherit"
+          className={classes.menuButton}
+          onClick={handleSectionClick("#about")}
+        >
           <Typography className={classes.pushRight}>About</Typography>
         </Button>
-        <Button color="inherit" href="#projects" className={classes.menuButton}>
+        <Button
+          color="inherit"
+          className={classes.menuButton}
+          onClick={handleSectionClick("#projects")}
+        >
           <Typography className={classes.pushRight}>Projects</Typography>
         </Button>
         <Button
           color="inherit"
-          href="#contact-me"
           className={classes.menuButton}
+          onClick={handleSectionClick("#contact-me")}
         >
           <Typography className={classes.pushRight}>Contact</Typography>
         </Button>

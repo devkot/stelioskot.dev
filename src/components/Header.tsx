@@ -14,25 +14,56 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }));
 
+enum Sections {
+  Top = "#page-top",
+  About = "#about",
+  Projects = "#projects",
+  ContactMe = "#contact-me",
+}
+
 const Header = () => {
   const classes = useStyles();
+
+  const handleSectionClick = (section: string) => (
+    event: React.MouseEvent<HTMLButtonElement>
+  ) => {
+    const anchor = (
+      (event.target as HTMLDivElement).ownerDocument || document
+    ).querySelector(section);
+
+    if (anchor) {
+      anchor.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  };
 
   return (
     <AppBar position="sticky" className={classes.root}>
       <Toolbar>
-        <Button color="inherit" className={classes.menuButton} href="#page-top">
+        <Button
+          color="inherit"
+          className={classes.menuButton}
+          onClick={handleSectionClick(Sections.Top)}
+        >
           <Typography className={classes.pushRight}>Devkot</Typography>
         </Button>
-        <Button color="inherit" href="#about" className={classes.menuButton}>
+        <Button
+          color="inherit"
+          className={classes.menuButton}
+          onClick={handleSectionClick(Sections.About)}
+        >
           <Typography className={classes.pushRight}>About</Typography>
         </Button>
-        <Button color="inherit" href="#projects" className={classes.menuButton}>
+        <Button
+          color="inherit"
+          className={classes.menuButton}
+          onClick={handleSectionClick(Sections.Projects)}
+        >
           <Typography className={classes.pushRight}>Projects</Typography>
         </Button>
         <Button
           color="inherit"
-          href="#contact-me"
           className={classes.menuButton}
+          onClick={handleSectionClick(Sections.ContactMe)}
         >
           <Typography className={classes.pushRight}>Contact</Typography>
         </Button>

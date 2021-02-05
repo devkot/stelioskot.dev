@@ -14,6 +14,13 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }));
 
+enum Sections {
+  Top = "#page-top",
+  About = "#about",
+  Projects = "#projects",
+  ContactMe = "#contact-me",
+}
+
 const Header = () => {
   const classes = useStyles();
 
@@ -35,28 +42,28 @@ const Header = () => {
         <Button
           color="inherit"
           className={classes.menuButton}
-          onClick={handleSectionClick("#page-top")}
+          onClick={handleSectionClick(Sections.Top)}
         >
           <Typography className={classes.pushRight}>Devkot</Typography>
         </Button>
         <Button
           color="inherit"
           className={classes.menuButton}
-          onClick={handleSectionClick("#about")}
+          onClick={handleSectionClick(Sections.About)}
         >
           <Typography className={classes.pushRight}>About</Typography>
         </Button>
         <Button
           color="inherit"
           className={classes.menuButton}
-          onClick={handleSectionClick("#projects")}
+          onClick={handleSectionClick(Sections.Projects)}
         >
           <Typography className={classes.pushRight}>Projects</Typography>
         </Button>
         <Button
           color="inherit"
           className={classes.menuButton}
-          onClick={handleSectionClick("#contact-me")}
+          onClick={handleSectionClick(Sections.ContactMe)}
         >
           <Typography className={classes.pushRight}>Contact</Typography>
         </Button>

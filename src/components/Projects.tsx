@@ -4,20 +4,18 @@ import { Typography, Box, Grid, Link, Paper } from "@material-ui/core";
 import { makeStyles, Theme } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme: Theme) => ({
-  homeContainer: {
+  sectionContainer: {
     paddingTop: theme.spacing(10),
   },
-  homeTitle: {
+  sectionTitle: {
     fontWeight: 800,
     paddingTop: theme.spacing(10),
     paddingBottom: theme.spacing(10),
     "text-align": "center",
     color: theme.palette.primary.main,
   },
-  homeContent: {
+  sectionContent: {
     fontWeight: 100,
-    paddingTop: theme.spacing(10),
-    paddingBottom: theme.spacing(10),
     "text-align": "left",
     color: theme.palette.primary.main,
   },
@@ -48,14 +46,14 @@ const Projects: React.FunctionComponent = () => {
   const classes = useStyles();
 
   return (
-    <Box id="projects" className={classes.homeContainer}>
+    <Box id="projects" className={classes.sectionContainer}>
       <Paper elevation={0}>
-        <Typography variant="h4" className={classes.homeTitle}>
+        <Typography variant="h4" className={classes.sectionTitle}>
           <Box>Projects</Box>
         </Typography>
         <Grid container spacing={3}>
           <Grid container item xs={12} sm={6}>
-            <Typography variant="h6" className={classes.homeContent}>
+            <Typography variant="h6" className={classes.sectionContent}>
               <Grid item>My personal interests include:</Grid>
               <ul>
                 <li>
@@ -95,7 +93,7 @@ const Projects: React.FunctionComponent = () => {
             </Typography>
           </Grid>
           <Grid container item xs={12} sm={6}>
-            <Typography variant="h6" className={classes.homeContent}>
+            <Typography variant="h6" className={classes.sectionContent}>
               <Grid item>
                 Current Job (
                 <LinkTo to="https://getadministrate.com" title="Administrate" />

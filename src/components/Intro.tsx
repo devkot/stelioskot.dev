@@ -28,23 +28,38 @@ const Intro: React.FunctionComponent = () => {
         <Typography variant="h4" className={classes.homeTitle}>
           <Grid container spacing={3}>
             <Grid container item xs={12} sm={6}>
-              <Grid item>Stelios Kotanidis</Grid>
+              <Grid item>WhoAmI (animation here)</Grid>
               <Typography variant="h6" className={classes.homeContent}>
                 <Grid item>
-                  Adventurer, Creator, Endlessly Curious. Always seeking the
-                  next experience and questioning the norm.
+                  This is a space for me to present my professional and personal
+                  interests and also spill my thoughts. I'm passionate about
+                  Software Engineering, traveling, photography and pushing my
+                  curiosity's limits.
                 </Grid>
                 <Grid item>
-                  I'm an experienced Fullstack Software Engineer that loves
-                  delivering technical solutions to customer problems. Currently
-                  based in Edinburgh, UK and working for Administrate, an
-                  Education Technology startup.
+                  This project is a result of a goal I had in 2020, to create a
+                  portfolio website to display my coding projects and abilities,
+                  and to create a personal website where I could post about all
+                  kinds of things I find fascinating. As such, this website kind
+                  of blends the personal and the professional as they're an
+                  interweaved aspect of our lives.
+                  <Grid item>
+                    Generally, I have quite a diverse set of interests, so I
+                    hope you can get something out of this, be it inspiration or
+                    simply hearing what I'm currently up to!
+                  </Grid>
                 </Grid>
               </Typography>
             </Grid>
             <Grid container item xs={12} sm={6}>
               <Grid item>About me</Grid>
               <Typography variant="h6" className={classes.homeContent}>
+                <Grid item>
+                  I'm an experienced Fullstack Software Engineer that loves
+                  delivering technical solutions to customer problems. Currently
+                  based in Edinburgh, UK and working for Administrate, an
+                  Education Technology startup.
+                </Grid>
                 <Grid item>
                   I've participated in a variety of projects helping companies
                   orchestrate and promote their training. I work with teams to

@@ -5,6 +5,7 @@ import { makeStyles, Theme } from "@material-ui/core/styles";
 import Projects from "../components/Projects";
 import Intro from "../components/Intro";
 import ContactMe from "../components/ContactMe";
+import Interests from "../components/Interests";
 
 const useStyles = makeStyles((theme: Theme) => ({
   homeContainer: {
@@ -19,6 +20,7 @@ const Home: React.FunctionComponent = () => {
     <Container maxWidth="lg" className={classes.homeContainer}>
       <Intro />
       <Projects />
+      <Interests />
       <ContactMe />
     </Container>
   );

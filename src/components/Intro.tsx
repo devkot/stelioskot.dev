@@ -2,11 +2,16 @@ import React from "react";
 
 import { Typography, Box, Container } from "@material-ui/core";
 import { makeStyles, Theme } from "@material-ui/core/styles";
+import roads from "../images/roads.jpg";
 
 const useStyles = makeStyles((theme: Theme) => ({
   homeContainer: {
     paddingTop: theme.spacing(10),
-    height: "50vh", // TODO - Change this
+    height: "100vh", // TODO - Change this
+    backgroundImage: `url(${roads})`,
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
   },
   homeTitle: {
     fontWeight: 800,
@@ -29,8 +34,8 @@ const Intro: React.FunctionComponent = () => {
   const classes = useStyles();
 
   return (
-    <Box>
-      <Container className={classes.homeContainer} maxWidth="lg" id="page-top">
+    <Box className={classes.homeContainer} id="page-top">
+      <Container>
         <Typography variant="h4">
           <Box className={classes.homeTitle}>WhoAmI (animation here)</Box>
         </Typography>
@@ -53,30 +58,6 @@ const Intro: React.FunctionComponent = () => {
             Generally, I have quite a diverse set of interests, so I hope you
             can get something out of this, be it getting to know me or simply
             hearing what I'm currently up to!
-          </Box>
-        </Typography>
-      </Container>
-      <Container className={classes.homeContainer} maxWidth="lg" id="page-top">
-        <Typography variant="h4">
-          <Box className={classes.homeTitle}>About me</Box>
-        </Typography>
-        <Typography variant="h6" className={classes.homeContent}>
-          <Box className={classes.boxText}>
-            I'm an experienced Fullstack Software Engineer that loves delivering
-            technical solutions to customer problems. Currently based in
-            Edinburgh, UK and working for Administrate, an Education Technology
-            startup.
-          </Box>
-          <Box className={classes.boxText}>
-            I've participated in a variety of projects helping companies
-            orchestrate and promote their training. I work with teams to
-            architect and deliver solutions across the stack, from the
-            underlying infrastructure to the UI, with a soft spot for building
-            robust, clean APIs.
-          </Box>
-          <Box className={classes.boxText}>
-            I'm always looking for opportunities to expand my horizons,
-            challenge myself and learn about new technologies.
           </Box>
         </Typography>
       </Container>

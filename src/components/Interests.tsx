@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Typography, Box, Grid, Paper } from "@material-ui/core";
+import { Typography, Box, Grid, Container } from "@material-ui/core";
 import { makeStyles, Theme } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -11,14 +11,14 @@ const useStyles = makeStyles((theme: Theme) => ({
     fontWeight: 800,
     paddingTop: theme.spacing(10),
     paddingBottom: theme.spacing(10),
-    "text-align": "center",
+    textAlign: "center",
     color: theme.palette.primary.main,
   },
   homeContent: {
     fontWeight: 100,
     paddingTop: theme.spacing(10),
     paddingBottom: theme.spacing(10),
-    "text-align": "left",
+    textAlign: "left",
     color: theme.palette.primary.main,
   },
 }));
@@ -27,8 +27,8 @@ const Interests: React.FunctionComponent = () => {
   const classes = useStyles();
 
   return (
-    <Box id="projects" className={classes.homeContainer}>
-      <Paper elevation={0}>
+    <Box id="interests" className={classes.homeContainer}>
+      <Container>
         <Typography variant="h4" className={classes.homeTitle}>
           <Box>What makes me tick</Box>
         </Typography>
@@ -89,7 +89,7 @@ const Interests: React.FunctionComponent = () => {
             </Typography>
           </Grid>
         </Grid>
-      </Paper>
+      </Container>
     </Box>
   );
 };

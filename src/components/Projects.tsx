@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Typography, Box, Grid, Link, Paper } from "@material-ui/core";
+import { Typography, Box, Grid, Link, Container } from "@material-ui/core";
 import { makeStyles, Theme } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -11,14 +11,14 @@ const useStyles = makeStyles((theme: Theme) => ({
     fontWeight: 800,
     paddingTop: theme.spacing(10),
     paddingBottom: theme.spacing(10),
-    "text-align": "center",
+    textAlign: "center",
     color: theme.palette.primary.main,
   },
   homeContent: {
     fontWeight: 100,
     paddingTop: theme.spacing(10),
     paddingBottom: theme.spacing(10),
-    "text-align": "left",
+    textAlign: "left",
     color: theme.palette.primary.main,
   },
   linkButton: {
@@ -49,7 +49,7 @@ const Projects: React.FunctionComponent = () => {
 
   return (
     <Box id="projects" className={classes.homeContainer}>
-      <Paper elevation={0}>
+      <Container>
         <Typography variant="h4" className={classes.homeTitle}>
           <Box>Projects</Box>
         </Typography>
@@ -173,7 +173,7 @@ const Projects: React.FunctionComponent = () => {
             </Typography>
           </Grid>
         </Grid>
-      </Paper>
+      </Container>
     </Box>
   );
 };

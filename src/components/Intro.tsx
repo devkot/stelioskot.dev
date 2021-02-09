@@ -36,23 +36,23 @@ const Intro: React.FunctionComponent = () => {
         </Typography>
         <Typography variant="h6" className={classes.homeContent}>
           <Box className={classes.boxText}>
-            This is a space for me to present my professional and personal
-            interests and also spill my thoughts. I'm passionate about Software
-            Engineering, traveling, photography and pushing my curiosity's
-            limits.
+            Hi, I'm Stelios! This is a space for me to present my professional
+            and personal interests and also spill my thoughts. I'm passionate
+            about Software Engineering, traveling, photography and pushing my
+            curiosity's limits.
           </Box>
           <Box className={classes.boxText}>
             This project is a result of a goal I had in 2020, to create a
-            portfolio website to display my coding projects and abilities, and
-            to create a personal website where I could post about all kinds of
-            things I find fascinating. As such, this website kind of blends the
-            personal and the professional as I believe they're an interweaved
-            aspect of our lives.
+            portfolio website to display my coding projects, and to create a
+            personal website where I could post about all kinds of things I find
+            fascinating. As such, this website kind of blends the personal and
+            the professional as I believe they're an interweaved aspect of our
+            lives.
           </Box>
           <Box className={classes.boxText}>
             Generally, I have quite a diverse set of interests, so I hope you
-            can get something out of this, be it inspiration or simply hearing
-            what I'm currently up to!
+            can get something out of this, be it getting to know me or simply
+            hearing what I'm currently up to!
           </Box>
         </Typography>
       </Container>

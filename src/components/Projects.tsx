@@ -64,6 +64,35 @@ const Projects: React.FunctionComponent = () => {
               <ul>
                 <li>
                   <Grid item>
+                    I've enjoyed taking part in a variety of projects ranging
+                    from the expansion of the Administrate platform to
+                    orchestrate the training and its delivery for learners to
+                    implementing standards like OpenID Connect for building an
+                    Identity Provider. I'm currently part of the R&D team where
+                    I've also had the pleasure of leading some projects.
+                  </Grid>
+                </li>
+                <li>
+                  <Grid item>
+                    Led the R&D team in unifying 3 existing legacy versions of a
+                    Learning Management System and in prototyping a Data
+                    Pipeline to efficiently transfer learner data.
+                  </Grid>
+                </li>
+                <li>
+                  <Grid item>
+                    Rebuilt an e-commerce GraphQL API enforcing clean
+                    architecture in order to increase development velocity.
+                  </Grid>
+                </li>
+                <li>
+                  <Grid item>
+                    Supported the enablement of Continuous Delivery of the core
+                    GraphQL API by implementing a contract testing framework.
+                  </Grid>
+                </li>
+                <li>
+                  <Grid item>
                     Improved performance of hierachical relationship queries in
                     a MySQL Database by implementing the{" "}
                     <LinkTo
@@ -75,15 +104,8 @@ const Projects: React.FunctionComponent = () => {
                 </li>
                 <li>
                   <Grid item>
-                    Led the R&D team in unifying 3 existing legacy versions of
-                    an LMS and in building a flexible Data Pipeline to
-                    efficiently transfer learner data.
-                  </Grid>
-                </li>
-                <li>
-                  <Grid item>
-                    Spearheaded shift in Engineering Culture by promoting
-                    proactive leadership and conducting technical interviews.
+                    Assisted the hiring process by conducting technical
+                    interviews.
                   </Grid>
                 </li>
               </ul>

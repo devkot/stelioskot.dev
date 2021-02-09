@@ -16,9 +16,6 @@ const useStyles = makeStyles((theme: Theme) => ({
   menuButtonBox: {
     marginLeft: "auto",
   },
-  menuButton: {
-    marginRight: theme.spacing(3),
-  },
 }));
 
 enum Sections {
@@ -50,22 +47,17 @@ const Header = () => {
           <Typography>Stelios Kotanidis</Typography>
         </Button>
         <Box className={classes.menuButtonBox}>
-          <Button
-            className={classes.menuButton}
-            color="inherit"
-            onClick={handleSectionClick(Sections.About)}
-          >
+          <Button color="inherit" onClick={handleSectionClick(Sections.About)}>
             <Typography>About</Typography>
           </Button>
           <Button
-            className={classes.menuButton}
             color="inherit"
             onClick={handleSectionClick(Sections.Projects)}
           >
             <Typography>Projects</Typography>
           </Button>
+
           <Button
-            className={classes.menuButton}
             color="inherit"
             onClick={handleSectionClick(Sections.ContactMe)}
           >

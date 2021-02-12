@@ -11,6 +11,7 @@ import {
   CardActionArea,
   GridList,
   GridListTile,
+  Zoom,
 } from "@material-ui/core";
 import { makeStyles, Theme } from "@material-ui/core/styles";
 import roads from "../images/roads.jpg";
@@ -40,10 +41,10 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 const Interests: React.FunctionComponent = () => {
   const classes = useStyles();
-  const [showTravel, setShowTravel] = useState(true);
-  const [showPhotography, setShowPhotography] = useState(true);
-  const [showReading, setShowReading] = useState(true);
-  const [showActivities, setShowActivities] = useState(true);
+  const [showTravelImg, setShowTravelImg] = useState(true);
+  const [showPhotographyImg, setShowPhotographyImg] = useState(true);
+  const [showReadingImg, setShowReadingImg] = useState(true);
+  const [showActivitiesImg, setShowActivitiesImg] = useState(true);
 
   const content = [
     {
@@ -57,8 +58,8 @@ const Interests: React.FunctionComponent = () => {
         observing their lifestyle.
       `,
       state: {
-        val: showTravel,
-        setter: setShowTravel,
+        val: showTravelImg,
+        setter: setShowTravelImg,
       },
     },
     {
@@ -74,8 +75,8 @@ const Interests: React.FunctionComponent = () => {
         someone else's eyes.
       `,
       state: {
-        val: showPhotography,
-        setter: setShowPhotography,
+        val: showPhotographyImg,
+        setter: setShowPhotographyImg,
       },
     },
     {
@@ -90,8 +91,8 @@ const Interests: React.FunctionComponent = () => {
         that I love to have long conversations about.
       `,
       state: {
-        val: showReading,
-        setter: setShowReading,
+        val: showReadingImg,
+        setter: setShowReadingImg,
       },
     },
     {
@@ -108,8 +109,8 @@ const Interests: React.FunctionComponent = () => {
         away!
       `,
       state: {
-        val: showActivities,
-        setter: setShowActivities,
+        val: showActivitiesImg,
+        setter: setShowActivitiesImg,
       },
     },
   ];
@@ -132,10 +133,20 @@ const Interests: React.FunctionComponent = () => {
                       {tile.state.val ? (
                         <CardMedia src={tile.img} component="img" />
                       ) : (
-                        <>
-                          <CardHeader title={tile.title} />
-                          <CardContent>{tile.description}</CardContent>
-                        </>
+                        <Zoom
+                          in={!tile.state.val}
+                          style={{
+                            transitionDelay: !tile.state.val ? "300ms" : "0ms",
+                          }}
+                        >
+                          <Typography
+                            variant="h6"
+                            className={classes.homeContent}
+                          >
+                            <CardHeader title={tile.title} />
+                            <CardContent>{tile.description}</CardContent>
+                          </Typography>
+                        </Zoom>
                       )}
                     </Typography>
                   </CardActionArea>

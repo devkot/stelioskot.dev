@@ -3,6 +3,7 @@ import React from "react";
 import { Typography, Box, Container } from "@material-ui/core";
 import { makeStyles, Theme } from "@material-ui/core/styles";
 import roads from "../images/roads.jpg";
+import Typewriter from "./Typewriter";
 
 const useStyles = makeStyles((theme: Theme) => ({
   background: {
@@ -37,8 +38,12 @@ const Intro: React.FunctionComponent = () => {
   return (
     <Box className={classes.background} id="page-top">
       <Container>
-        <Typography variant="h4">
-          <Box className={classes.homeTitle}>WhoAmI (animation here)</Box>
+        <Typography variant="h4" className={classes.homeTitle}>
+          <Typewriter
+            targets={["whoami", "stelios"]}
+            typingDelay={250}
+            deletingDelay={200}
+          />
         </Typography>
         <Typography variant="h6" className={classes.homeContent}>
           <Box className={classes.boxText}>

@@ -1,6 +1,17 @@
 import React from "react";
 
-import { Typography, Box, Grid, Link, Container } from "@material-ui/core";
+import {
+  Typography,
+  Box,
+  Grid,
+  Link,
+  Container,
+  Card,
+  CardActionArea,
+  CardContent,
+  CardHeader,
+  Chip,
+} from "@material-ui/core";
 import { makeStyles, Theme } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -23,6 +34,13 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   linkButton: {
     color: theme.palette.secondary.main,
+  },
+  chips: {
+    display: "flex",
+    flexWrap: "wrap",
+    "& > *": {
+      margin: theme.spacing(0.5),
+    },
   },
 }));
 
@@ -53,6 +71,190 @@ const Projects: React.FunctionComponent = () => {
         <Typography variant="h4" className={classes.homeTitle}>
           <Box>Projects</Box>
         </Typography>
+        <Card raised>
+          <Typography variant="h6" className={classes.homeContent}>
+            <CardHeader title="Data Pipeline" />
+            <CardContent>
+              <div className={classes.chips}>
+                <Chip label="Python" />
+                <Chip label="SFTP" />
+                <Chip label="AWS Lambda" />
+                <Chip label="AWS S3" />
+                <Chip label="AWS Fargate" />
+                <Chip label="Docker" />
+              </div>
+              <Box component="p">
+                Led the R&D team in the delivery of a first iteration of a cloud
+                based Data Pipeline to bulk sync data between the Administrate
+                platform and third parties.
+              </Box>
+            </CardContent>
+          </Typography>
+        </Card>
+
+        <Card raised>
+          <Typography variant="h6" className={classes.homeContent}>
+            <CardHeader title="Learning Management System" />
+            <CardContent>
+              <Box className={classes.chips}>
+                <Chip label="Node.js" />
+                <Chip label="GraphQL" />
+                <Chip label="React.js" />
+                <Chip label="TypeScript" />
+                <Chip label="Nginx" />
+                <Chip label="Docker" />
+              </Box>
+              <Box component="p">
+                Led the unification of 3 versions of legacy LMS's in order to
+                allow learners to undertake online learning and receive
+                certificates of completion.
+              </Box>
+            </CardContent>
+          </Typography>
+        </Card>
+        <Card raised>
+          <Typography variant="h6" className={classes.homeContent}>
+            <CardHeader title="Identity Provider" />
+            <CardContent>
+              <div className={classes.chips}>
+                <Chip label="Python" />
+                <Chip label="Asyncio" />
+                <Chip label="Starlette" />
+                <Chip label="MySQL" />
+                <Chip label="OpenID Connect" />
+                <Chip label="OAuth 2.0" />
+              </div>
+              <Box component="p">
+                Expanded a newly built Identity Provider by implementing SSO
+                using OpenID Connect
+              </Box>
+            </CardContent>
+          </Typography>
+        </Card>
+        <Card raised>
+          <CardActionArea>
+            <Typography variant="h6" className={classes.homeContent}>
+              <CardHeader title="E-commerce Platform" />
+              <CardContent>
+                <Box className={classes.chips}>
+                  <Chip label="Node.js" />
+                  <Chip label="GraphQL" />
+                  <Chip label="Docker" />
+                </Box>
+                <Box component="p">
+                  Rebuilt an e-commerce GraphQL API in order to simplify
+                  building integrations by enforcing a cleaner schema while also
+                  increasing development speed by promoting a modular approach
+                  to building a GraphQL server.
+                </Box>
+              </CardContent>
+            </Typography>
+          </CardActionArea>
+        </Card>
+        <Card raised>
+          <CardActionArea
+            href="https://engineering.getadministrate.com/databases/2020/07/15/nested-set-model.html"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <Typography variant="h6" className={classes.homeContent}>
+              <CardHeader title="Miscellaneous" />
+              <CardContent>
+                <div className={classes.chips}>
+                  <Chip label="Python" />
+                  <Chip label="Flask" />
+                  <Chip label="MySQL" />
+                  <Chip label="AWS" />
+                </div>
+                <Box component="p">
+                  I've enjoyed taking part in a variety of smaller projects
+                  ranging from the expansion of the Administrate platorm's API
+                  to supporting the enablement of its Continuous Delivery by
+                  implementing a contract testing framework. Particularly, I
+                  enjoyed optimising the performance of MySQL hierarchical
+                  relationship queries by implementing the Nested Set Model.
+                </Box>
+              </CardContent>
+            </Typography>
+          </CardActionArea>
+        </Card>
+        <Card raised>
+          <CardActionArea
+            href="https://github.com/devkot/devkot.github.io"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <Typography variant="h6" className={classes.homeContent}>
+              <CardHeader title="Personal Website" />
+              <CardContent>
+                <div className={classes.chips}>
+                  <Chip label="TypeScript" />
+                  <Chip label="React.js" />
+                  <Chip label="Create React App" />
+                  <Chip label="Material UI" />
+                </div>
+                <Box component="p">
+                  The website you're currently on! I'm experimenting with{" "}
+                  <LinkTo to="https://material-ui.com/" title="Material UI" />{" "}
+                  and <LinkTo to="https://reactjs.org/" title="React.js" /> in
+                  order to work on my creative skills by building a personal
+                  website.
+                </Box>
+              </CardContent>
+            </Typography>
+          </CardActionArea>
+        </Card>
+        <Card raised>
+          <Typography variant="h6" className={classes.homeContent}>
+            <CardHeader title="Network Caching for 5G Systems" />
+            <CardContent>
+              <div className={classes.chips}>
+                <Chip label="Java" />
+                <Chip label="Android" />
+                <Chip label="SQLite" />
+              </div>
+              <Box component="p">
+                Despite being a code geek, I'm still fascinated by Networks and
+                its advancements, like Software Defined Networks. The endless
+                options of this next generation tech along the ever growing
+                number of IoT devices also inspired my thesis on "Network
+                Caching for 5G Systems". I developed a protype for an Android
+                app to download popular content outside of peak network traffic
+                hours.
+              </Box>
+            </CardContent>
+          </Typography>
+        </Card>
+        <Card raised>
+          <CardActionArea
+            href="https://github.com/devkot/SearchEngine"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <Typography variant="h6" className={classes.homeContent}>
+              <CardHeader title="Search Engine" />
+              <CardContent>
+                <div className={classes.chips}>
+                  <Chip label="C" />
+                  <Chip label="Bash" />
+                  <Chip label="IPC" />
+                  <Chip label="Named Pipes" />
+                  <Chip label="Trie" />
+                </div>
+                <Box component="p">
+                  One of the projects I've enjoyed the most was building a
+                  Distributed Search Engine from scratch using C for a
+                  university Systems Programming course. It really helped me to
+                  avoid treating most popular Web Server frameworks as a black
+                  box! It consists of a multithreaded web server serving the
+                  content and a Crawler to index the pages using a Trie for
+                  quick lookups. IPC communication is handled using Named Pipes
+                  (FIFOs).
+                </Box>
+              </CardContent>
+            </Typography>
+          </CardActionArea>
+        </Card>
         <Grid container spacing={3}>
           <Grid container item xs={12} sm={6}>
             <Typography variant="h6" className={classes.homeContent}>
@@ -61,6 +263,7 @@ const Projects: React.FunctionComponent = () => {
                 <LinkTo to="https://getadministrate.com" title="Administrate" />
                 )
               </Grid>
+
               <ul>
                 <li>
                   <Grid item>

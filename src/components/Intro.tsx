@@ -5,13 +5,15 @@ import { makeStyles, Theme } from "@material-ui/core/styles";
 import roads from "../images/roads.jpg";
 
 const useStyles = makeStyles((theme: Theme) => ({
-  homeContainer: {
+  background: {
     paddingTop: theme.spacing(10),
-    height: "100vh", // TODO - Change this
     backgroundImage: `url(${roads})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     backgroundPosition: "center",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   },
   homeTitle: {
     fontWeight: 800,
@@ -21,11 +23,10 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   homeContent: {
     fontWeight: 100,
-    textAlign: "center",
+    textAlign: "left",
     color: theme.palette.primary.main,
   },
   boxText: {
-    textAlign: "left",
     paddingBottom: theme.spacing(2),
   },
 }));
@@ -34,7 +35,7 @@ const Intro: React.FunctionComponent = () => {
   const classes = useStyles();
 
   return (
-    <Box className={classes.homeContainer} id="page-top">
+    <Box className={classes.background} id="page-top">
       <Container>
         <Typography variant="h4">
           <Box className={classes.homeTitle}>WhoAmI (animation here)</Box>

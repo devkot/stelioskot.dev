@@ -11,12 +11,12 @@ const Typewriter: React.FunctionComponent<{
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
+    const isFinished = targets[index] === name;
+    const hasFinishedTyping = isFinished && !isDeleting;
+    const shouldStartTyping = name.length === 0;
+
     const interval = setInterval(
       () => {
-        const isFinished = targets[index] === name;
-        const shouldStartTyping = name.length === 0;
-
-        const hasFinishedTyping = isFinished && !isDeleting;
         if (hasFinishedTyping) {
           setIsDeleting(true);
           return;
@@ -35,12 +35,21 @@ const Typewriter: React.FunctionComponent<{
           return;
         }
       },
-      isDeleting ? deletingDelay : typingDelay
+      isDeleting ? deletingDelay : hasFinishedTyping ? 1000 : typingDelay
     );
     return () => clearInterval(interval);
   }, [targets, typingDelay, deletingDelay, name, isDeleting, index]);
 
-  return <InputBase value={name} inputProps={{ "aria-label": "typewriter" }} />;
+  return (
+    <InputBase
+      value={name}
+      inputProps={{
+        "aria-label": "typewriter",
+        readOnly: true,
+        style: { fontSize: 30 },
+      }}
+    />
+  );
 };
 
 export default Typewriter;

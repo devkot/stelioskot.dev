@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   homeTitle: {
     fontWeight: 800,
     textAlign: "center",
+    justifyContent: "center",
     color: theme.palette.primary.main,
     paddingBottom: theme.spacing(2),
   },
@@ -40,9 +41,9 @@ const Intro: React.FunctionComponent = () => {
       <Container>
         <Typography variant="h4" className={classes.homeTitle}>
           <Typewriter
-            targets={["whoami", "stelios"]}
+            targets={["whoami", "stelioskotanidis"]}
             typingDelay={250}
-            deletingDelay={200}
+            deletingDelay={150}
           />
         </Typography>
         <Typography variant="h6" className={classes.homeContent}>

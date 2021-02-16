@@ -38,6 +38,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     justifyContent: "space-around",
     overflow: "hidden",
   },
+  gridList: {
+    // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
+    transform: "translateZ(0)",
+  },
 }));
 
 const Interests: React.FunctionComponent = () => {
@@ -126,7 +130,11 @@ const Interests: React.FunctionComponent = () => {
           <Box>What makes me tick</Box>
         </Typography>
         <div className={classes.root}>
-          <GridList cellHeight="auto" cols={isLessThanXs ? 1 : 2}>
+          <GridList
+            cellHeight="auto"
+            cols={isLessThanXs ? 1 : 2}
+            className={classes.gridList}
+          >
             {content.map((tile) => (
               <GridListTile key={tile.id}>
                 <Card elevation={0}>

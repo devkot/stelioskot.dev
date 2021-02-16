@@ -1,16 +1,20 @@
 import React from "react";
-import { AppBar, Toolbar, Typography, Button, Theme } from "@material-ui/core";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  Theme,
+  Box,
+} from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
     flexGrow: 1,
   },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  pushRight: {
-    flex: 1,
+  menuButtonBox: {
+    marginLeft: "auto",
   },
 }));
 
@@ -39,34 +43,27 @@ const Header = () => {
   return (
     <AppBar position="sticky" className={classes.root}>
       <Toolbar>
-        <Button
-          color="inherit"
-          className={classes.menuButton}
-          onClick={handleSectionClick(Sections.Top)}
-        >
-          <Typography className={classes.pushRight}>Devkot</Typography>
+        <Button color="inherit" onClick={handleSectionClick(Sections.Top)}>
+          <Typography>Stelios Kotanidis</Typography>
         </Button>
-        <Button
-          color="inherit"
-          className={classes.menuButton}
-          onClick={handleSectionClick(Sections.About)}
-        >
-          <Typography className={classes.pushRight}>About</Typography>
-        </Button>
-        <Button
-          color="inherit"
-          className={classes.menuButton}
-          onClick={handleSectionClick(Sections.Projects)}
-        >
-          <Typography className={classes.pushRight}>Projects</Typography>
-        </Button>
-        <Button
-          color="inherit"
-          className={classes.menuButton}
-          onClick={handleSectionClick(Sections.ContactMe)}
-        >
-          <Typography className={classes.pushRight}>Contact</Typography>
-        </Button>
+        <Box className={classes.menuButtonBox}>
+          <Button color="inherit" onClick={handleSectionClick(Sections.About)}>
+            <Typography>About</Typography>
+          </Button>
+          <Button
+            color="inherit"
+            onClick={handleSectionClick(Sections.Projects)}
+          >
+            <Typography>Projects</Typography>
+          </Button>
+
+          <Button
+            color="inherit"
+            onClick={handleSectionClick(Sections.ContactMe)}
+          >
+            <Typography>Contact</Typography>
+          </Button>
+        </Box>
       </Toolbar>
     </AppBar>
   );

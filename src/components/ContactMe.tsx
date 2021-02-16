@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Typography, Box, Grid, Paper } from "@material-ui/core";
+import { Typography, Box, Grid, Container } from "@material-ui/core";
 import { makeStyles, Theme } from "@material-ui/core/styles";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
@@ -14,14 +14,14 @@ const useStyles = makeStyles((theme: Theme) => ({
     fontWeight: 800,
     paddingTop: theme.spacing(10),
     paddingBottom: theme.spacing(10),
-    "text-align": "center",
+    textAlign: "center",
     color: theme.palette.primary.main,
   },
   homeContent: {
     fontWeight: 100,
     paddingTop: theme.spacing(10),
     paddingBottom: theme.spacing(10),
-    "text-align": "center",
+    textAlign: "center",
     color: theme.palette.primary.main,
   },
   socialButton: {
@@ -37,7 +37,7 @@ const ContactMe: React.FunctionComponent = () => {
 
   return (
     <Box id="contact-me" className={classes.homeContainer}>
-      <Paper elevation={0}>
+      <Container>
         <Typography variant="h4" className={classes.homeTitle}>
           <Box id="projects">Contact Me</Box>
         </Typography>
@@ -80,7 +80,7 @@ const ContactMe: React.FunctionComponent = () => {
             </Grid>
           </Grid>
         </Typography>
-      </Paper>
+      </Container>
     </Box>
   );
 };

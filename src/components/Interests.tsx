@@ -50,8 +50,9 @@ const Interests: React.FunctionComponent = () => {
   const [showPhotographyImg, setShowPhotographyImg] = useState(true);
   const [showReadingImg, setShowReadingImg] = useState(true);
   const [showActivitiesImg, setShowActivitiesImg] = useState(true);
-  const isLessThanXs = useMediaQuery((theme: Theme) =>
-    theme.breakpoints.down("xs")
+  const isLessThanXs = useMediaQuery(
+    (theme: Theme) => theme.breakpoints.down("xs"),
+    { noSsr: true }
   );
 
   const content = [

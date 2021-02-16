@@ -12,6 +12,7 @@ import {
   GridList,
   GridListTile,
   Zoom,
+  useMediaQuery,
 } from "@material-ui/core";
 import { makeStyles, Theme } from "@material-ui/core/styles";
 import roads from "../images/roads.jpg";
@@ -45,6 +46,9 @@ const Interests: React.FunctionComponent = () => {
   const [showPhotographyImg, setShowPhotographyImg] = useState(true);
   const [showReadingImg, setShowReadingImg] = useState(true);
   const [showActivitiesImg, setShowActivitiesImg] = useState(true);
+  const isLessThanXs = useMediaQuery((theme: Theme) =>
+    theme.breakpoints.down("xs")
+  );
 
   const content = [
     {
@@ -122,14 +126,14 @@ const Interests: React.FunctionComponent = () => {
           <Box>What makes me tick</Box>
         </Typography>
         <div className={classes.root}>
-          <GridList cellHeight="auto">
+          <GridList cellHeight="auto" cols={isLessThanXs ? 1 : 2}>
             {content.map((tile) => (
               <GridListTile key={tile.id}>
                 <Card elevation={0}>
                   <CardActionArea
                     onClick={() => tile.state.setter(!tile.state.val)}
                   >
-                    <Typography variant="h6" className={classes.homeContent}>
+                    <>
                       {tile.state.val ? (
                         <CardMedia src={tile.img} component="img" />
                       ) : (
@@ -148,7 +152,7 @@ const Interests: React.FunctionComponent = () => {
                           </Typography>
                         </Zoom>
                       )}
-                    </Typography>
+                    </>
                   </CardActionArea>
                 </Card>
               </GridListTile>

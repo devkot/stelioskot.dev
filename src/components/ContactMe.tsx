@@ -54,7 +54,7 @@ const ContactMe: React.FunctionComponent = () => {
               href="mailto:stelioskotanidis@hotmail.com"
               className={classes.socialButton}
             >
-              <MailOutlineIcon />
+              <MailOutlineIcon fontSize="large" />
             </Grid>
             <Grid
               item
@@ -65,7 +65,7 @@ const ContactMe: React.FunctionComponent = () => {
               rel="noopener noreferrer"
               className={classes.socialButton}
             >
-              <LinkedInIcon />
+              <LinkedInIcon fontSize="large" />
             </Grid>
             <Grid
               item
@@ -76,7 +76,7 @@ const ContactMe: React.FunctionComponent = () => {
               rel="noopener noreferrer"
               className={classes.socialButton}
             >
-              <GitHubIcon />
+              <GitHubIcon fontSize="large" />
             </Grid>
           </Grid>
         </Typography>

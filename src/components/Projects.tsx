@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import {
   Typography,
@@ -87,6 +87,12 @@ const LinkTo: React.FunctionComponent<{ to: string; title: string }> = ({
 
 const Projects: React.FunctionComponent = () => {
   const classes = useStyles();
+  const [expanded, setExpanded] = useState<string | false>(false);
+
+  const handleChange = (panel: string) => (
+    event: React.ChangeEvent<{}>,
+    isExpanded: boolean
+  ) => setExpanded(isExpanded ? panel : false);
 
   const projects: Array<ProjectContent> = [
     {
@@ -183,7 +189,12 @@ const Projects: React.FunctionComponent = () => {
           <Box>Projects</Box>
         </Typography>
         {projects.map((project) => (
-          <Accordion className={classes.accordionSeparator} key={project.title}>
+          <Accordion
+            className={classes.accordionSeparator}
+            key={project.title}
+            expanded={expanded === project.title}
+            onChange={handleChange(project.title)}
+          >
             <AccordionSummary
               aria-controls="panel1a-content"
               id="panel1a-header"

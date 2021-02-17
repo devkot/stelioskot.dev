@@ -8,32 +8,47 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
+  Link,
+  AccordionActions,
+  Divider,
 } from "@material-ui/core";
 import { makeStyles, Theme } from "@material-ui/core/styles";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 const useStyles = makeStyles((theme: Theme) => ({
-  homeContainer: {
+  sectionContainer: {
     paddingTop: theme.spacing(10),
   },
-  homeTitle: {
+  sectionTitle: {
     fontWeight: 800,
     paddingTop: theme.spacing(10),
     paddingBottom: theme.spacing(10),
     textAlign: "center",
     color: theme.palette.primary.main,
   },
-  homeContent: {
+  accordionTitle: {
+    fontWeight: 400,
+    paddingTop: theme.spacing(1),
+    paddingBottom: theme.spacing(1),
+    textAlign: "left",
+    color: theme.palette.primary.main,
+  },
+  accordionContent: {
     fontWeight: 100,
     paddingTop: theme.spacing(1),
     paddingBottom: theme.spacing(1),
     textAlign: "left",
     color: theme.palette.primary.main,
   },
+  accordionActions: {
+    marginTop: theme.spacing(1),
+    marginLeft: theme.spacing(2),
+    justifyContent: "left",
+  },
   linkButton: {
     color: theme.palette.secondary.main,
   },
-  cardSeparator: {
+  accordionSeparator: {
     paddingBottom: theme.spacing(1),
   },
   chips: {
@@ -52,25 +67,23 @@ interface ProjectContent {
   chips: Array<string>;
 }
 
-// const CardDescription: React.FunctionComponent<{
-//   project: ProjectContent;
-// }> = ({ project }) => {
-//   const classes = useStyles();
+const LinkTo: React.FunctionComponent<{ to: string; title: string }> = ({
+  to,
+  title,
+}) => {
+  const classes = useStyles();
 
-//   return (
-//     <Typography variant="h6" className={classes.homeContent}>
-//       <CardHeader title={project.title} />
-//       <CardContent>
-//         <div className={classes.chips}>
-//           {project.chips.map((chip) => (
-//             <Chip label={chip} key={`${project.title}-${chip}`} />
-//           ))}
-//         </div>
-//         <Box component="p">{project.description}</Box>
-//       </CardContent>
-//     </Typography>
-//   );
-// };
+  return (
+    <Link
+      href={to}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={classes.linkButton}
+    >
+      {title}
+    </Link>
+  );
+};
 
 const Projects: React.FunctionComponent = () => {
   const classes = useStyles();
@@ -164,57 +177,42 @@ const Projects: React.FunctionComponent = () => {
   ];
 
   return (
-    <Box id="projects" className={classes.homeContainer}>
+    <Box id="projects" className={classes.sectionContainer}>
       <Container>
-        <Typography variant="h4" className={classes.homeTitle}>
+        <Typography variant="h4" className={classes.sectionTitle}>
           <Box>Projects</Box>
         </Typography>
         {projects.map((project) => (
-          <Accordion className={classes.cardSeparator}>
-            {/* <Card variant="outlined" raised key={project.title}>
-              <CardDescription project={project} key={project.title} />
-            </Card> */}
+          <Accordion className={classes.accordionSeparator} key={project.title}>
             <AccordionSummary
               aria-controls="panel1a-content"
               id="panel1a-header"
               expandIcon={<ExpandMoreIcon />}
             >
-              <Typography className={classes.homeContent}>
+              <Typography variant="h6" className={classes.accordionTitle}>
                 {project.title}
               </Typography>
             </AccordionSummary>
             <AccordionDetails>
-              <Typography className={classes.homeContent}>
+              <Typography variant="h6" className={classes.accordionContent}>
                 <div className={classes.chips}>
                   {project.chips.map((chip) => (
                     <Chip label={chip} key={`${project.title}-${chip}`} />
                   ))}
                 </div>
-                <p>{project.description}</p>
+                <Box component="p">{project.description}</Box>
               </Typography>
             </AccordionDetails>
+            {project.link && (
+              <>
+                <Divider />
+                <AccordionActions className={classes.accordionActions}>
+                  <LinkTo to={project.link} title="Info" />
+                </AccordionActions>
+              </>
+            )}
           </Accordion>
         ))}
-        {/* {projects.map((project) => (
-          <div className={classes.cardSeparator} key={project.title}>
-            {project.link ? (
-              <CardActionArea
-                href={project.link}
-                target="_blank"
-                rel="noreferrer noopener"
-                key={project.title}
-              >
-                <Card variant="outlined" raised key={project.title}>
-                  <CardDescription project={project} key={project.title} />
-                </Card>
-              </CardActionArea>
-            ) : (
-              <Card variant="outlined" raised key={project.title}>
-                <CardDescription project={project} key={project.title} />
-              </Card>
-            )}
-          </div>
-        ))} */}
       </Container>
     </Box>
   );

@@ -25,8 +25,8 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   homeContent: {
     fontWeight: 100,
-    paddingTop: theme.spacing(10),
-    paddingBottom: theme.spacing(10),
+    paddingTop: theme.spacing(1),
+    paddingBottom: theme.spacing(1),
     textAlign: "left",
     color: theme.palette.primary.main,
   },
@@ -178,12 +178,12 @@ const Projects: React.FunctionComponent = () => {
                 rel="noreferrer noopener"
                 key={project.title}
               >
-                <Card variant="outlined" key={project.title}>
+                <Card variant="outlined" raised key={project.title}>
                   <CardDescription project={project} key={project.title} />
                 </Card>
               </CardActionArea>
             ) : (
-              <Card raised key={project.title}>
+              <Card variant="outlined" raised key={project.title}>
                 <CardDescription project={project} key={project.title} />
               </Card>
             )}

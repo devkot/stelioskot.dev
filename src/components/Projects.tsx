@@ -4,13 +4,13 @@ import {
   Typography,
   Box,
   Container,
-  Card,
-  CardActionArea,
-  CardContent,
-  CardHeader,
   Chip,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
 } from "@material-ui/core";
 import { makeStyles, Theme } from "@material-ui/core/styles";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 const useStyles = makeStyles((theme: Theme) => ({
   homeContainer: {
@@ -52,25 +52,25 @@ interface ProjectContent {
   chips: Array<string>;
 }
 
-const CardDescription: React.FunctionComponent<{
-  project: ProjectContent;
-}> = ({ project }) => {
-  const classes = useStyles();
+// const CardDescription: React.FunctionComponent<{
+//   project: ProjectContent;
+// }> = ({ project }) => {
+//   const classes = useStyles();
 
-  return (
-    <Typography variant="h6" className={classes.homeContent}>
-      <CardHeader title={project.title} />
-      <CardContent>
-        <div className={classes.chips}>
-          {project.chips.map((chip) => (
-            <Chip label={chip} key={`${project.title}-${chip}`} />
-          ))}
-        </div>
-        <Box component="p">{project.description}</Box>
-      </CardContent>
-    </Typography>
-  );
-};
+//   return (
+//     <Typography variant="h6" className={classes.homeContent}>
+//       <CardHeader title={project.title} />
+//       <CardContent>
+//         <div className={classes.chips}>
+//           {project.chips.map((chip) => (
+//             <Chip label={chip} key={`${project.title}-${chip}`} />
+//           ))}
+//         </div>
+//         <Box component="p">{project.description}</Box>
+//       </CardContent>
+//     </Typography>
+//   );
+// };
 
 const Projects: React.FunctionComponent = () => {
   const classes = useStyles();
@@ -170,6 +170,32 @@ const Projects: React.FunctionComponent = () => {
           <Box>Projects</Box>
         </Typography>
         {projects.map((project) => (
+          <Accordion className={classes.cardSeparator}>
+            {/* <Card variant="outlined" raised key={project.title}>
+              <CardDescription project={project} key={project.title} />
+            </Card> */}
+            <AccordionSummary
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+              expandIcon={<ExpandMoreIcon />}
+            >
+              <Typography className={classes.homeContent}>
+                {project.title}
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography className={classes.homeContent}>
+                <div className={classes.chips}>
+                  {project.chips.map((chip) => (
+                    <Chip label={chip} key={`${project.title}-${chip}`} />
+                  ))}
+                </div>
+                <p>{project.description}</p>
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+        ))}
+        {/* {projects.map((project) => (
           <div className={classes.cardSeparator} key={project.title}>
             {project.link ? (
               <CardActionArea
@@ -188,7 +214,7 @@ const Projects: React.FunctionComponent = () => {
               </Card>
             )}
           </div>
-        ))}
+        ))} */}
       </Container>
     </Box>
   );

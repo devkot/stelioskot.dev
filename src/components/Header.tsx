@@ -22,6 +22,7 @@ enum Sections {
   Top = "#page-top",
   About = "#about",
   Projects = "#projects",
+  Interests = "#interests",
   ContactMe = "#contact-me",
 }
 
@@ -55,6 +56,12 @@ const Header = () => {
             onClick={handleSectionClick(Sections.Projects)}
           >
             <Typography>Projects</Typography>
+          </Button>
+          <Button
+            color="inherit"
+            onClick={handleSectionClick(Sections.Interests)}
+          >
+            <Typography>Interests</Typography>
           </Button>
 
           <Button

@@ -15,6 +15,8 @@ import {
   useMediaQuery,
 } from "@material-ui/core";
 import { makeStyles, Theme } from "@material-ui/core/styles";
+import beach from "../images/beach.jpg";
+import sunset from "../images/sunset.jpg";
 import roads from "../images/roads.jpg";
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -77,7 +79,7 @@ const Interests: React.FunctionComponent = () => {
     {
       id: 2,
       title: "Photography",
-      img: roads,
+      img: sunset,
       description: `Traveling and photography go hand in hand -
         it's a way of immortalising those memories and sharing
         them with the world. I've been experimenting with
@@ -94,7 +96,7 @@ const Interests: React.FunctionComponent = () => {
     {
       id: 3,
       title: "Reading",
-      img: roads,
+      img: beach,
       description: `Ever since I was a child I loved reading
         fantasy books - I probably know more than I should about
         the Lord of the Rings saga. However, I've recently

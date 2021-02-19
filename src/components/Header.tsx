@@ -42,7 +42,7 @@ const Header = () => {
   };
 
   return (
-    <AppBar position="sticky" className={classes.root}>
+    <AppBar position="sticky" color="secondary" className={classes.root}>
       <Toolbar>
         <Button color="inherit" onClick={handleSectionClick(Sections.Top)}>
           <Typography>Stelios Kotanidis</Typography>

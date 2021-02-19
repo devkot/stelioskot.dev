@@ -6,12 +6,12 @@ import Intro from "../components/Intro";
 import ContactMe from "../components/ContactMe";
 import Interests from "../components/Interests";
 import About from "../components/About";
-import roads from "../images/cool-background.png";
+import compute from "../images/compute.png";
 
 const useStyles = makeStyles((theme: Theme) => ({
   background: {
     paddingTop: theme.spacing(10),
-    backgroundImage: `url(${roads})`,
+    backgroundImage: `url(${compute})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     backgroundAttachment: "fixed",

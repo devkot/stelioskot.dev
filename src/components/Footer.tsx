@@ -22,7 +22,7 @@ const Footer = () => {
   const classes = useStyles();
 
   return (
-    <AppBar position="fixed" color="primary" className={classes.appBar}>
+    <AppBar position="fixed" color="secondary" className={classes.appBar}>
       <Container maxWidth="md">
         <Toolbar className={classes.toolbar}>
           <Typography>&copy; 2021 Stelios Kotanidis</Typography>

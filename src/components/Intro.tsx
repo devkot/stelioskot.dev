@@ -2,16 +2,15 @@ import React from "react";
 
 import { Typography, Box, Container } from "@material-ui/core";
 import { makeStyles, Theme } from "@material-ui/core/styles";
-import roads from "../images/roads.jpg";
 import Typewriter from "./Typewriter";
 
 const useStyles = makeStyles((theme: Theme) => ({
   background: {
-    paddingTop: theme.spacing(10),
-    backgroundImage: `url(${roads})`,
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
+    // paddingTop: theme.spacing(10),
+    // backgroundImage: `url(${roads})`,
+    // backgroundRepeat: "no-repeat",
+    // backgroundSize: "cover",
+    // backgroundPosition: "center",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",

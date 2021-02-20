@@ -6,8 +6,16 @@ import {
   Button,
   Theme,
   Box,
+  Hidden,
+  IconButton,
+  Menu,
+  MenuItem,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import MenuIcon from "@material-ui/icons/Menu";
+
+const drawerWidth = 240;
+const ITEM_HEIGHT = 48;
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -16,6 +24,17 @@ const useStyles = makeStyles((theme: Theme) => ({
   menuButtonBox: {
     marginLeft: "auto",
   },
+  drawer: {
+    [theme.breakpoints.up("sm")]: {
+      flexShrink: 0,
+    },
+  },
+  drawerPaper: {
+    width: drawerWidth,
+  },
+  hide: {
+    display: "none",
+  },
 }));
 
 enum Sections {
@@ -23,12 +42,23 @@ enum Sections {
   About = "#about",
   Projects = "#projects",
   Interests = "#interests",
-  ContactMe = "#contact-me",
+  Contact = "#contact-me",
 }
 
-const Header = () => {
-  const classes = useStyles();
+const MenuItemLink: React.FunctionComponent<{
+  section: string;
+  handleClose: () => void;
+}> = ({ section, handleClose }) => {
+  return (
+    <MenuItem onClick={handleClose}>
+      <SectionButton section={section} />
+    </MenuItem>
+  );
+};
 
+const SectionButton: React.FunctionComponent<{
+  section: string;
+}> = ({ section }) => {
   const handleSectionClick = (section: string) => (
     event: React.MouseEvent<HTMLButtonElement>
   ) => {
@@ -40,6 +70,43 @@ const Header = () => {
       anchor.scrollIntoView({ behavior: "smooth", block: "center" });
     }
   };
+  return (
+    <Button
+      color="inherit"
+      onClick={handleSectionClick(Sections[section as keyof typeof Sections])}
+    >
+      <Typography>{section}</Typography>
+    </Button>
+  );
+};
+
+const Header: React.FunctionComponent = () => {
+  const classes = useStyles();
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    // handleSectionClick(section);
+    setAnchorEl(null);
+  };
+
+  const handleSectionClick = (section: string) => (
+    event: React.MouseEvent<HTMLButtonElement>
+  ) => {
+    const anchor = (
+      (event.target as HTMLDivElement).ownerDocument || document
+    ).querySelector(section);
+
+    if (anchor) {
+      anchor.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+    if (anchorEl) {
+      setAnchorEl(null);
+    }
+  };
 
   return (
     <AppBar position="sticky" color="secondary" className={classes.root}>
@@ -47,30 +114,47 @@ const Header = () => {
         <Button color="inherit" onClick={handleSectionClick(Sections.Top)}>
           <Typography>Stelios Kotanidis</Typography>
         </Button>
-        <Box className={classes.menuButtonBox}>
-          <Button color="inherit" onClick={handleSectionClick(Sections.About)}>
-            <Typography>About</Typography>
-          </Button>
-          <Button
+        <Hidden smUp>
+          <IconButton
             color="inherit"
-            onClick={handleSectionClick(Sections.Projects)}
+            aria-label="open drawer"
+            edge="end"
+            onClick={handleClick}
           >
-            <Typography>Projects</Typography>
-          </Button>
-          <Button
+            <MenuIcon />
+          </IconButton>
+          <Menu
             color="inherit"
-            onClick={handleSectionClick(Sections.Interests)}
+            open={Boolean(anchorEl)}
+            onClose={handleClose}
+            anchorEl={anchorEl}
+            PaperProps={{
+              style: {
+                maxHeight: ITEM_HEIGHT * 4.5,
+                width: "20ch",
+              },
+            }}
           >
-            <Typography>Interests</Typography>
-          </Button>
-
-          <Button
-            color="inherit"
-            onClick={handleSectionClick(Sections.ContactMe)}
-          >
-            <Typography>Contact</Typography>
-          </Button>
-        </Box>
+            {Object.keys(Sections)
+              .filter((section) => section !== "Top")
+              .map((section) => (
+                <MenuItemLink
+                  key={section}
+                  section={section}
+                  handleClose={handleClose}
+                />
+              ))}
+          </Menu>
+        </Hidden>
+        <Hidden xsDown>
+          <Box className={classes.menuButtonBox}>
+            {Object.keys(Sections)
+              .filter((section) => section !== "Top")
+              .map((section) => (
+                <SectionButton key={section} section={section} />
+              ))}
+          </Box>
+        </Hidden>
       </Toolbar>
     </AppBar>
   );

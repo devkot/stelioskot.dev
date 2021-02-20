@@ -26,6 +26,8 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   socialButton: {
     padding: theme.spacing(2),
+    color: "inherit",
+    textDecoration: "none",
   },
   root: {
     flexGrow: 1,

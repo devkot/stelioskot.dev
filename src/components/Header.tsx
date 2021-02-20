@@ -48,28 +48,21 @@ enum Sections {
 const MenuItemLink: React.FunctionComponent<{
   section: string;
   handleClose: () => void;
-}> = ({ section, handleClose }) => {
+  handleSectionClick: any;
+}> = ({ section, handleClose, handleSectionClick }) => {
   return (
-    <MenuItem onClick={handleClose}>
-      <SectionButton section={section} />
+    <MenuItem
+      onClick={handleSectionClick(Sections[section as keyof typeof Sections])}
+    >
+      {section}
     </MenuItem>
   );
 };
 
 const SectionButton: React.FunctionComponent<{
   section: string;
-}> = ({ section }) => {
-  const handleSectionClick = (section: string) => (
-    event: React.MouseEvent<HTMLButtonElement>
-  ) => {
-    const anchor = (
-      (event.target as HTMLDivElement).ownerDocument || document
-    ).querySelector(section);
-
-    if (anchor) {
-      anchor.scrollIntoView({ behavior: "smooth", block: "center" });
-    }
-  };
+  handleSectionClick: any;
+}> = ({ section, handleSectionClick }) => {
   return (
     <Button
       color="inherit"
@@ -101,7 +94,10 @@ const Header: React.FunctionComponent = () => {
     ).querySelector(section);
 
     if (anchor) {
-      anchor.scrollIntoView({ behavior: "smooth", block: "center" });
+      setTimeout(
+        () => anchor.scrollIntoView({ behavior: "smooth", block: "center" }),
+        0
+      );
     }
     if (anchorEl) {
       setAnchorEl(null);
@@ -142,6 +138,7 @@ const Header: React.FunctionComponent = () => {
                   key={section}
                   section={section}
                   handleClose={handleClose}
+                  handleSectionClick={handleSectionClick}
                 />
               ))}
           </Menu>
@@ -151,7 +148,11 @@ const Header: React.FunctionComponent = () => {
             {Object.keys(Sections)
               .filter((section) => section !== "Top")
               .map((section) => (
-                <SectionButton key={section} section={section} />
+                <SectionButton
+                  key={section}
+                  section={section}
+                  handleSectionClick={handleSectionClick}
+                />
               ))}
           </Box>
         </Hidden>

@@ -23,7 +23,7 @@ const Home: React.FunctionComponent = () => {
 
   return (
     <Container
-      maxWidth="xl"
+      maxWidth={false}
       disableGutters={true}
       className={classes.background}
     >

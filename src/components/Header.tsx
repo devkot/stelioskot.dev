@@ -22,7 +22,7 @@ const Header: React.FunctionComponent = () => {
 
     if (anchor) {
       setTimeout(
-        () => anchor.scrollIntoView({ behavior: "smooth", block: "center" }),
+        () => anchor.scrollIntoView({ behavior: "smooth", block: "start" }),
         0
       );
     }

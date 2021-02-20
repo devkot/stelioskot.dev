@@ -67,12 +67,12 @@ const NavigationMenu: React.FunctionComponent<{
     setOpen(false);
   };
 
-  function handleListKeyDown(event: React.KeyboardEvent) {
+  const handleListKeyDown = (event: React.KeyboardEvent) => {
     if (event.key === "Tab") {
       event.preventDefault();
       setOpen(false);
     }
-  }
+  };
 
   const anchorRef = React.useRef<HTMLButtonElement>(null);
 

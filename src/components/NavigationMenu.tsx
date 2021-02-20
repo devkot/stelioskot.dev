@@ -126,6 +126,7 @@ const NavigationMenu: React.FunctionComponent<{
                       .filter((section) => section !== "Top")
                       .map((section) => (
                         <MenuItem
+                          key={section}
                           onClick={handleSectionClick(
                             Sections[section as keyof typeof Sections]
                           )}

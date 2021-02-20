@@ -193,10 +193,9 @@ const Projects: React.FunctionComponent = () => {
           <Box>Projects</Box>
         </Typography>
         {projects.map((project) => (
-          <Paper>
+          <Paper key={project.title}>
             <Accordion
               className={classes.accordion}
-              key={project.title}
               expanded={expanded === project.title}
               onChange={handleChange(project.title)}
             >

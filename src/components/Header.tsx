@@ -5,17 +5,17 @@ import {
   Typography,
   Button,
   Theme,
-  Box,
   Hidden,
   IconButton,
-  Menu,
   MenuItem,
+  ClickAwayListener,
+  Grow,
+  MenuList,
+  Paper,
+  Popper,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import MenuIcon from "@material-ui/icons/Menu";
-
-const drawerWidth = 240;
-const ITEM_HEIGHT = 48;
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -23,17 +23,6 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   menuButtonBox: {
     marginLeft: "auto",
-  },
-  drawer: {
-    [theme.breakpoints.up("sm")]: {
-      flexShrink: 0,
-    },
-  },
-  drawerPaper: {
-    width: drawerWidth,
-  },
-  hide: {
-    display: "none",
   },
 }));
 
@@ -47,51 +36,47 @@ enum Sections {
 
 const MenuItemLink: React.FunctionComponent<{
   section: string;
-  handleClose: () => void;
+  handleClose: any;
   handleSectionClick: any;
 }> = ({ section, handleClose, handleSectionClick }) => {
   return (
     <MenuItem
       onClick={handleSectionClick(Sections[section as keyof typeof Sections])}
     >
+      {/* <SectionButton
+        section={section}
+        handleSectionClick={handleSectionClick}
+      /> */}
       {section}
     </MenuItem>
   );
 };
 
-const SectionButton: React.FunctionComponent<{
-  section: string;
-  handleSectionClick: any;
-}> = ({ section, handleSectionClick }) => {
-  return (
-    <Button
-      color="inherit"
-      onClick={handleSectionClick(Sections[section as keyof typeof Sections])}
-    >
-      <Typography>{section}</Typography>
-    </Button>
-  );
-};
+// const SectionButton: React.FunctionComponent<{
+//   section: string;
+//   handleSectionClick: any;
+// }> = ({ section, handleSectionClick }) => {
+//   return (
+//     <Button
+//       color="inherit"
+//       onClick={handleSectionClick(Sections[section as keyof typeof Sections])}
+//     >
+//       <Typography>{section}</Typography>
+//     </Button>
+//   );
+// };
 
 const Header: React.FunctionComponent = () => {
   const classes = useStyles();
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    // handleSectionClick(section);
-    setAnchorEl(null);
-  };
 
   const handleSectionClick = (section: string) => (
     event: React.MouseEvent<HTMLButtonElement>
   ) => {
+    // setOpen(false);
     const anchor = (
       (event.target as HTMLDivElement).ownerDocument || document
     ).querySelector(section);
+    console.log(anchor);
 
     if (anchor) {
       setTimeout(
@@ -99,10 +84,42 @@ const Header: React.FunctionComponent = () => {
         0
       );
     }
-    if (anchorEl) {
-      setAnchorEl(null);
-    }
+    setOpen(false);
   };
+  const [open, setOpen] = React.useState(false);
+  const anchorRef = React.useRef<HTMLButtonElement>(null);
+
+  const handleToggle = () => {
+    setOpen((prevOpen) => !prevOpen);
+  };
+
+  const handleClose = (event: React.MouseEvent<EventTarget>) => {
+    if (
+      anchorRef.current &&
+      anchorRef.current.contains(event.target as HTMLElement)
+    ) {
+      return;
+    }
+
+    setOpen(false);
+  };
+
+  function handleListKeyDown(event: React.KeyboardEvent) {
+    if (event.key === "Tab") {
+      event.preventDefault();
+      setOpen(false);
+    }
+  }
+
+  // return focus to the button when we transitioned from !open -> open
+  const prevOpen = React.useRef(open);
+  React.useEffect(() => {
+    if (prevOpen.current === true && open === false) {
+      anchorRef.current!.focus();
+    }
+
+    prevOpen.current = open;
+  }, [open]);
 
   return (
     <AppBar position="sticky" color="secondary" className={classes.root}>
@@ -115,11 +132,50 @@ const Header: React.FunctionComponent = () => {
             color="inherit"
             aria-label="open drawer"
             edge="end"
-            onClick={handleClick}
+            onClick={handleToggle}
+            ref={anchorRef}
           >
             <MenuIcon />
           </IconButton>
-          <Menu
+          <Popper
+            open={open}
+            anchorEl={anchorRef.current}
+            role={undefined}
+            transition
+            disablePortal
+          >
+            {({ TransitionProps, placement }) => (
+              <Grow
+                {...TransitionProps}
+                style={{
+                  transformOrigin:
+                    placement === "bottom" ? "center top" : "center bottom",
+                }}
+              >
+                <Paper>
+                  <ClickAwayListener onClickAway={handleClose}>
+                    <MenuList
+                      autoFocusItem={open}
+                      id="menu-list-grow"
+                      onKeyDown={handleListKeyDown}
+                    >
+                      {Object.keys(Sections)
+                        .filter((section) => section !== "Top")
+                        .map((section) => (
+                          <MenuItemLink
+                            key={section}
+                            section={section}
+                            handleClose={handleClose}
+                            handleSectionClick={handleSectionClick}
+                          />
+                        ))}
+                    </MenuList>
+                  </ClickAwayListener>
+                </Paper>
+              </Grow>
+            )}
+          </Popper>
+          {/* <Menu
             color="inherit"
             open={Boolean(anchorEl)}
             onClose={handleClose}
@@ -141,9 +197,9 @@ const Header: React.FunctionComponent = () => {
                   handleSectionClick={handleSectionClick}
                 />
               ))}
-          </Menu>
+          </Menu> */}
         </Hidden>
-        <Hidden xsDown>
+        {/* <Hidden xsDown>
           <Box className={classes.menuButtonBox}>
             {Object.keys(Sections)
               .filter((section) => section !== "Top")
@@ -155,7 +211,7 @@ const Header: React.FunctionComponent = () => {
                 />
               ))}
           </Box>
-        </Hidden>
+        </Hidden> */}
       </Toolbar>
     </AppBar>
   );

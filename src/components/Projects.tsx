@@ -11,6 +11,7 @@ import {
   Link,
   AccordionActions,
   Divider,
+  Paper,
 } from "@material-ui/core";
 import { makeStyles, Theme } from "@material-ui/core/styles";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
@@ -32,6 +33,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     paddingBottom: theme.spacing(1),
     textAlign: "left",
     color: theme.palette.primary.main,
+    fillOpacity: "revert",
   },
   accordionContent: {
     fontWeight: 100,
@@ -48,8 +50,10 @@ const useStyles = makeStyles((theme: Theme) => ({
   linkButton: {
     color: theme.palette.secondary.main,
   },
-  accordionSeparator: {
+  accordion: {
     paddingBottom: theme.spacing(1),
+    backgroundColor: theme.palette.secondary.main,
+    opacity: "0.6",
   },
   chips: {
     display: "flex",
@@ -189,40 +193,43 @@ const Projects: React.FunctionComponent = () => {
           <Box>Projects</Box>
         </Typography>
         {projects.map((project) => (
-          <Accordion
-            className={classes.accordionSeparator}
-            key={project.title}
-            expanded={expanded === project.title}
-            onChange={handleChange(project.title)}
-          >
-            <AccordionSummary
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-              expandIcon={<ExpandMoreIcon />}
+          <Paper>
+            <Accordion
+              className={classes.accordion}
+              key={project.title}
+              expanded={expanded === project.title}
+              onChange={handleChange(project.title)}
             >
-              <Typography variant="h6" className={classes.accordionTitle}>
-                {project.title}
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography variant="h6" className={classes.accordionContent}>
-                <div className={classes.chips}>
-                  {project.chips.map((chip) => (
-                    <Chip label={chip} key={`${project.title}-${chip}`} />
-                  ))}
-                </div>
-                <Box component="p">{project.description}</Box>
-              </Typography>
-            </AccordionDetails>
-            {project.link && (
-              <>
-                <Divider />
-                <AccordionActions className={classes.accordionActions}>
-                  <LinkTo to={project.link} title="Info" />
-                </AccordionActions>
-              </>
-            )}
-          </Accordion>
+              <AccordionSummary
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+                className={classes.accordionContent}
+                expandIcon={<ExpandMoreIcon />}
+              >
+                <Typography variant="h6" className={classes.accordionTitle}>
+                  {project.title}
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography variant="h6" className={classes.accordionContent}>
+                  <div className={classes.chips}>
+                    {project.chips.map((chip) => (
+                      <Chip label={chip} key={`${project.title}-${chip}`} />
+                    ))}
+                  </div>
+                  <Box component="p">{project.description}</Box>
+                </Typography>
+              </AccordionDetails>
+              {project.link && (
+                <>
+                  <Divider />
+                  <AccordionActions className={classes.accordionActions}>
+                    <LinkTo to={project.link} title="Info" />
+                  </AccordionActions>
+                </>
+              )}
+            </Accordion>
+          </Paper>
         ))}
       </Container>
     </Box>

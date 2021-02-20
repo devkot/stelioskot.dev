@@ -15,20 +15,22 @@ import {
   useMediaQuery,
 } from "@material-ui/core";
 import { makeStyles, Theme } from "@material-ui/core/styles";
+import beach from "../images/beach.jpg";
+import sunset from "../images/sunset.jpg";
 import roads from "../images/roads.jpg";
 
 const useStyles = makeStyles((theme: Theme) => ({
-  homeContainer: {
+  sectionContainer: {
     paddingTop: theme.spacing(10),
   },
-  homeTitle: {
+  sectionTitle: {
     fontWeight: 800,
     paddingTop: theme.spacing(10),
     paddingBottom: theme.spacing(10),
     textAlign: "center",
     color: theme.palette.primary.main,
   },
-  homeContent: {
+  sectionContent: {
     fontWeight: 100,
     color: theme.palette.primary.main,
   },
@@ -37,6 +39,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     flexWrap: "wrap",
     justifyContent: "space-around",
     overflow: "hidden",
+  },
+  card: {
+    backgroundColor: "transparent",
   },
   gridList: {
     // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
@@ -74,7 +79,7 @@ const Interests: React.FunctionComponent = () => {
     {
       id: 2,
       title: "Photography",
-      img: roads,
+      img: sunset,
       description: `Traveling and photography go hand in hand -
         it's a way of immortalising those memories and sharing
         them with the world. I've been experimenting with
@@ -91,7 +96,7 @@ const Interests: React.FunctionComponent = () => {
     {
       id: 3,
       title: "Reading",
-      img: roads,
+      img: beach,
       description: `Ever since I was a child I loved reading
         fantasy books - I probably know more than I should about
         the Lord of the Rings saga. However, I've recently
@@ -125,9 +130,9 @@ const Interests: React.FunctionComponent = () => {
   ];
 
   return (
-    <Box id="interests" className={classes.homeContainer}>
+    <Box id="interests" className={classes.sectionContainer}>
       <Container>
-        <Typography variant="h4" className={classes.homeTitle}>
+        <Typography variant="h4" className={classes.sectionTitle}>
           <Box>What makes me tick</Box>
         </Typography>
         <div className={classes.root}>
@@ -138,7 +143,7 @@ const Interests: React.FunctionComponent = () => {
           >
             {content.map((tile) => (
               <GridListTile key={tile.id}>
-                <Card elevation={0}>
+                <Card elevation={0} className={classes.card}>
                   <CardActionArea
                     onClick={() => tile.state.setter(!tile.state.val)}
                   >
@@ -154,7 +159,7 @@ const Interests: React.FunctionComponent = () => {
                         >
                           <Typography
                             variant="h6"
-                            className={classes.homeContent}
+                            className={classes.sectionContent}
                           >
                             <CardHeader title={tile.title} />
                             <CardContent>{tile.description}</CardContent>

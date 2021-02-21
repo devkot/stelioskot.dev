@@ -6,7 +6,7 @@ import Intro from "../components/Intro";
 import ContactMe from "../components/ContactMe";
 import Interests from "../components/Interests";
 import About from "../components/About";
-import compute from "../images/compute.png";
+import compute from "../images/compute.webp";
 
 const useStyles = makeStyles((theme: Theme) => ({
   background: {

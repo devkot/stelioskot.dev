@@ -16,10 +16,10 @@ import {
   Tooltip,
 } from "@material-ui/core";
 import { makeStyles, Theme } from "@material-ui/core/styles";
-import nature from "../images/nature.jpg";
-import camera from "../images/camera.jpg";
-import globe from "../images/globe.jpg";
-import books from "../images/books.jpg";
+import nature from "../images/nature.webp";
+import camera from "../images/camera.webp";
+import globe from "../images/globe.webp";
+import books from "../images/books.webp";
 
 const useStyles = makeStyles((theme: Theme) => ({
   sectionContainer: {

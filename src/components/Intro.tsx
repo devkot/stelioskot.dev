@@ -6,11 +6,6 @@ import Typewriter from "./Typewriter";
 
 const useStyles = makeStyles((theme: Theme) => ({
   background: {
-    // paddingTop: theme.spacing(10),
-    // backgroundImage: `url(${roads})`,
-    // backgroundRepeat: "no-repeat",
-    // backgroundSize: "cover",
-    // backgroundPosition: "center",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -36,7 +31,7 @@ const Intro: React.FunctionComponent = () => {
   const classes = useStyles();
 
   return (
-    <Box className={classes.background} id="page-top">
+    <Box className={classes.background}>
       <Container>
         <Typography variant="h4" className={classes.homeTitle}>
           <Typewriter

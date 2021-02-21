@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 
 export const Basic: React.FunctionComponent = (props) => (
   <>
+    <div id="page-top" />
     <Header />
     {props.children}
     <Footer />

@@ -16,9 +16,10 @@ import {
   Tooltip,
 } from "@material-ui/core";
 import { makeStyles, Theme } from "@material-ui/core/styles";
-import beach from "../images/beach.jpg";
-import sunset from "../images/sunset.jpg";
-import roads from "../images/roads.jpg";
+import nature from "../images/nature.jpg";
+import camera from "../images/camera.jpg";
+import globe from "../images/globe.jpg";
+import books from "../images/books.jpg";
 
 const useStyles = makeStyles((theme: Theme) => ({
   sectionContainer: {
@@ -44,6 +45,12 @@ const useStyles = makeStyles((theme: Theme) => ({
   card: {
     backgroundColor: "transparent",
   },
+  cardMedia: {
+    display: "block",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+  },
   gridList: {
     // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
     transform: "translateZ(0)",
@@ -65,7 +72,7 @@ const Interests: React.FunctionComponent = () => {
     {
       id: 1,
       title: "Traveling",
-      img: roads,
+      img: globe,
       description: `I grew up constantly moving between cities and
         countries and that's a good explanation of why I got the
         bug for traveling. I love exploring the unknown and making
@@ -80,7 +87,7 @@ const Interests: React.FunctionComponent = () => {
     {
       id: 2,
       title: "Photography",
-      img: sunset,
+      img: camera,
       description: `Traveling and photography go hand in hand -
         it's a way of immortalising those memories and sharing
         them with the world. I've been experimenting with
@@ -97,7 +104,7 @@ const Interests: React.FunctionComponent = () => {
     {
       id: 3,
       title: "Reading",
-      img: beach,
+      img: books,
       description: `Ever since I was a child I loved reading
         fantasy books - I probably know more than I should about
         the Lord of the Rings saga. However, I've recently
@@ -113,7 +120,7 @@ const Interests: React.FunctionComponent = () => {
     {
       id: 4,
       title: "Physical Activities",
-      img: roads,
+      img: nature,
       description: `As the Ancient Greeks said, a healthy
         mind exists in a healthy body. Exercising is a good way to
         unwind while also having fun playing a sport you enjoy and
@@ -158,7 +165,11 @@ const Interests: React.FunctionComponent = () => {
                           arrow
                           placement={i % 2 === 0 ? "left" : "right"}
                         >
-                          <CardMedia src={tile.img} component="img" />
+                          <CardMedia
+                            src={tile.img}
+                            component="img"
+                            className={classes.cardMedia}
+                          />
                         </Tooltip>
                       ) : (
                         <Zoom

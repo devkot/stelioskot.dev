@@ -1,9 +1,10 @@
 import React from "react";
-import { AppBar, Toolbar, Typography, Button, Theme } from "@material-ui/core";
+import { AppBar, Toolbar, Typography, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import NavigationMenu, { Sections } from "./NavigationMenu";
+import ScrollTop from "./ScrollTop";
 
-const useStyles = makeStyles((theme: Theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     flexGrow: 1,
   },
@@ -26,7 +27,9 @@ const Header: React.FunctionComponent = () => {
         0
       );
     }
-    setOpen(false);
+    if (open) {
+      setOpen(false);
+    }
   };
 
   return (
@@ -41,6 +44,7 @@ const Header: React.FunctionComponent = () => {
           handleSectionClick={handleSectionClick}
         />
       </Toolbar>
+      <ScrollTop handleSectionClick={handleSectionClick} />
     </AppBar>
   );
 };

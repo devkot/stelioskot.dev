@@ -13,6 +13,7 @@ import {
   GridListTile,
   Zoom,
   useMediaQuery,
+  Tooltip,
 } from "@material-ui/core";
 import { makeStyles, Theme } from "@material-ui/core/styles";
 import beach from "../images/beach.jpg";
@@ -141,7 +142,7 @@ const Interests: React.FunctionComponent = () => {
             cols={isLessThanXs ? 1 : 2}
             className={classes.gridList}
           >
-            {content.map((tile) => (
+            {content.map((tile, i) => (
               <GridListTile key={tile.id}>
                 <Card elevation={0} className={classes.card}>
                   <CardActionArea
@@ -149,7 +150,16 @@ const Interests: React.FunctionComponent = () => {
                   >
                     <>
                       {tile.state.val ? (
-                        <CardMedia src={tile.img} component="img" />
+                        <Tooltip
+                          title={
+                            <Typography variant="caption">Click Me</Typography>
+                          }
+                          interactive
+                          arrow
+                          placement={i % 2 === 0 ? "left" : "right"}
+                        >
+                          <CardMedia src={tile.img} component="img" />
+                        </Tooltip>
                       ) : (
                         <Zoom
                           in={!tile.state.val}

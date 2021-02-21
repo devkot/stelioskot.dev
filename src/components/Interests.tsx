@@ -47,9 +47,8 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   cardMedia: {
     display: "block",
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center",
+    maxHeight: 426,
+    objectFit: "cover",
   },
   gridList: {
     // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.

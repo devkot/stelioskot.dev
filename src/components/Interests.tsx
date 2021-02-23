@@ -16,10 +16,14 @@ import {
   Tooltip,
 } from "@material-ui/core";
 import { makeStyles, Theme } from "@material-ui/core/styles";
-import nature from "../images/nature.webp";
-import camera from "../images/camera.webp";
-import globe from "../images/globe.webp";
-import books from "../images/books.webp";
+import naturewebp from "../images/nature.webp";
+import naturejpg from "../images/nature.jpg";
+import camerawebp from "../images/camera.webp";
+import camerajpg from "../images/camera.jpg";
+import globewebp from "../images/globe.webp";
+import globejpg from "../images/globe.jpg";
+import bookswebp from "../images/books.webp";
+import booksjpg from "../images/books.jpg";
 
 const useStyles = makeStyles((theme: Theme) => ({
   sectionContainer: {
@@ -71,7 +75,8 @@ const Interests: React.FunctionComponent = () => {
     {
       id: 1,
       title: "Traveling",
-      img: globe,
+      webpImg: globewebp,
+      img: globejpg,
       description: `I grew up constantly moving between cities and
         countries and that's a good explanation of why I got the
         bug for traveling. I love exploring the unknown and making
@@ -86,7 +91,8 @@ const Interests: React.FunctionComponent = () => {
     {
       id: 2,
       title: "Photography",
-      img: camera,
+      webpImg: camerawebp,
+      img: camerajpg,
       description: `Traveling and photography go hand in hand -
         it's a way of immortalising those memories and sharing
         them with the world. I've been experimenting with
@@ -103,7 +109,8 @@ const Interests: React.FunctionComponent = () => {
     {
       id: 3,
       title: "Reading",
-      img: books,
+      webpImg: bookswebp,
+      img: booksjpg,
       description: `Ever since I was a child I loved reading
         fantasy books - I probably know more than I should about
         the Lord of the Rings saga. However, I've recently
@@ -119,7 +126,8 @@ const Interests: React.FunctionComponent = () => {
     {
       id: 4,
       title: "Physical Activities",
-      img: nature,
+      webpImg: naturewebp,
+      img: naturejpg,
       description: `As the Ancient Greeks said, a healthy
         mind exists in a healthy body. Exercising is a good way to
         unwind while also having fun playing a sport you enjoy and
@@ -165,10 +173,12 @@ const Interests: React.FunctionComponent = () => {
                           placement={i % 2 === 0 ? "left" : "right"}
                         >
                           <CardMedia
-                            src={tile.img}
-                            component="img"
+                            component="picture"
                             className={classes.cardMedia}
-                          />
+                          >
+                            <source srcSet={tile.webpImg} type="image/webp" />
+                            <img src={tile.img} alt="Describing interests" />
+                          </CardMedia>
                         </Tooltip>
                       ) : (
                         <Zoom

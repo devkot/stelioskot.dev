@@ -157,7 +157,7 @@ const Projects: React.FunctionComponent = () => {
       title: "Personal Website",
       description: `The website you're currently on! I'm experimenting with 
       Material UI and React.js in order to work on my creative skills by building a personal website.`,
-      link: "https://github.com/devkot/devkot.github.io",
+      link: "https://github.com/devkot/stelioskot.dev",
       chips: ["TypeScript", "React.js", "Create React App", "Material UI"],
     },
     {

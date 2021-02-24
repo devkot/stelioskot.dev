@@ -52,6 +52,8 @@ const useStyles = makeStyles((theme: Theme) => ({
   cardMedia: {
     display: "block",
     maxHeight: 426,
+    width: "100%",
+    height: "100%",
     objectFit: "cover",
   },
   gridList: {

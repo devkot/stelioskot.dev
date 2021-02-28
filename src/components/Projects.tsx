@@ -208,8 +208,8 @@ const Projects: React.FunctionComponent = () => {
               onChange={handleChange(project.title)}
             >
               <AccordionSummary
-                aria-controls="panel1a-content"
-                id="panel1a-header"
+                aria-controls={`panel1a-${project.title}-content`}
+                id={`panel1a-${project.title}-header`}
                 className={classes.accordionContent}
                 expandIcon={
                   <ExpandMoreIcon className={classes.expandMoreIcon} />

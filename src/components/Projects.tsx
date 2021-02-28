@@ -62,6 +62,10 @@ const useStyles = makeStyles((theme: Theme) => ({
       margin: theme.spacing(0.5),
     },
   },
+  chipsContent: {
+    fontSize: 14,
+    fontWeight: 800,
+  },
 }));
 
 interface ProjectContent {
@@ -213,7 +217,11 @@ const Projects: React.FunctionComponent = () => {
                 <Typography variant="h6" className={classes.accordionContent}>
                   <div className={classes.chips}>
                     {project.chips.map((chip) => (
-                      <Chip label={chip} key={`${project.title}-${chip}`} />
+                      <Chip
+                        label={chip}
+                        key={`${project.title}-${chip}`}
+                        className={classes.chipsContent}
+                      />
                     ))}
                   </div>
                   <Box component="p">{project.description}</Box>

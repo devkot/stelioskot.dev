@@ -10,6 +10,9 @@ const theme = createMuiTheme({
       main: blueGrey[900],
     },
   },
+  typography: {
+    fontFamily: "Helvetica",
+  },
 });
 
 export default theme;

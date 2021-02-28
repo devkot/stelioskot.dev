@@ -52,6 +52,7 @@ const ContactMe: React.FunctionComponent = () => {
             <Grid
               item
               key="Email"
+              aria-label="Email"
               component="a"
               href="mailto:stelioskotanidis@hotmail.com"
               className={classes.socialButton}
@@ -63,6 +64,7 @@ const ContactMe: React.FunctionComponent = () => {
               key="LinkedIn"
               component="a"
               href="https://www.linkedin.com/in/stylianos-kotanidis/"
+              aria-label="LinkedIn"
               target="_blank"
               rel="noopener noreferrer"
               className={classes.socialButton}
@@ -72,6 +74,7 @@ const ContactMe: React.FunctionComponent = () => {
             <Grid
               item
               key="GitHub"
+              aria-label="GitHub"
               component="a"
               href="https://github.com/devkot"
               target="_blank"

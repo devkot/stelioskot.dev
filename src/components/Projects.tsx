@@ -48,12 +48,17 @@ const useStyles = makeStyles((theme: Theme) => ({
     justifyContent: "left",
   },
   linkButton: {
-    color: theme.palette.secondary.main,
+    fontWeight: 800,
   },
   accordion: {
     paddingBottom: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
-    opacity: "0.6",
+    backgroundColor: `rgba(0, 0, 0, 0.2);`,
+  },
+  expandMoreIcon: {
+    color: theme.palette.primary.main,
+  },
+  paper: {
+    backgroundColor: "transparent",
   },
   chips: {
     display: "flex",
@@ -61,6 +66,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     "& > *": {
       margin: theme.spacing(0.5),
     },
+  },
+  chipsContent: {
+    fontWeight: 400,
   },
 }));
 
@@ -193,7 +201,7 @@ const Projects: React.FunctionComponent = () => {
           <Box>Projects</Box>
         </Typography>
         {projects.map((project) => (
-          <Paper key={project.title}>
+          <Paper key={project.title} className={classes.paper}>
             <Accordion
               className={classes.accordion}
               expanded={expanded === project.title}
@@ -203,7 +211,9 @@ const Projects: React.FunctionComponent = () => {
                 aria-controls="panel1a-content"
                 id="panel1a-header"
                 className={classes.accordionContent}
-                expandIcon={<ExpandMoreIcon />}
+                expandIcon={
+                  <ExpandMoreIcon className={classes.expandMoreIcon} />
+                }
               >
                 <Typography variant="h6" className={classes.accordionTitle}>
                   {project.title}
@@ -213,7 +223,11 @@ const Projects: React.FunctionComponent = () => {
                 <Typography variant="h6" className={classes.accordionContent}>
                   <div className={classes.chips}>
                     {project.chips.map((chip) => (
-                      <Chip label={chip} key={`${project.title}-${chip}`} />
+                      <Chip
+                        label={chip}
+                        key={`${project.title}-${chip}`}
+                        className={classes.chipsContent}
+                      />
                     ))}
                   </div>
                   <Box component="p">{project.description}</Box>
@@ -223,7 +237,7 @@ const Projects: React.FunctionComponent = () => {
                 <>
                   <Divider />
                   <AccordionActions className={classes.accordionActions}>
-                    <LinkTo to={project.link} title="Info" />
+                    <LinkTo to={project.link} title="Read More" />
                   </AccordionActions>
                 </>
               )}

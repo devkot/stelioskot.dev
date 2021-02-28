@@ -38,6 +38,7 @@ const Intro: React.FunctionComponent = () => {
             targets={["whoami", "stelioskotanidis"]}
             typingDelay={250}
             deletingDelay={150}
+            className={classes.homeTitle}
           />
         </Typography>
         <Typography variant="h6" className={classes.homeContent}>

@@ -5,7 +5,8 @@ const Typewriter: React.FunctionComponent<{
   targets: Array<string>;
   typingDelay: number;
   deletingDelay: number;
-}> = ({ targets, typingDelay, deletingDelay }) => {
+  className: string;
+}> = ({ targets, typingDelay, deletingDelay, className }) => {
   const [name, setName] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [index, setIndex] = useState(0);
@@ -42,6 +43,7 @@ const Typewriter: React.FunctionComponent<{
 
   return (
     <InputBase
+      className={className}
       value={name}
       inputProps={{
         "aria-label": "typewriter",

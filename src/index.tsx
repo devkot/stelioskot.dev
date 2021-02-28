@@ -1,10 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import * as Panelbear from "@panelbear/panelbear-js";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { ThemeProvider } from "@material-ui/core/styles";
 import theme from "./Theme";
+
+if (process.env.NODE_ENV === "production") {
+  Panelbear.load(process.env.REACT_APP_PANELBEAR_ID!);
+  Panelbear.trackPageview();
+}
 
 ReactDOM.render(
   <React.StrictMode>

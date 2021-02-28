@@ -12,6 +12,7 @@ const theme = createMuiTheme({
   },
   typography: {
     fontFamily: "Helvetica",
+    fontSize: 16,
   },
 });
 

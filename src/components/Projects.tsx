@@ -48,12 +48,17 @@ const useStyles = makeStyles((theme: Theme) => ({
     justifyContent: "left",
   },
   linkButton: {
-    color: theme.palette.secondary.main,
+    fontWeight: 800,
   },
   accordion: {
     paddingBottom: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
-    opacity: "0.6",
+    backgroundColor: `rgba(0, 0, 0, 0.2);`,
+  },
+  expandMoreIcon: {
+    color: theme.palette.primary.main,
+  },
+  paper: {
+    backgroundColor: "transparent",
   },
   chips: {
     display: "flex",
@@ -197,7 +202,7 @@ const Projects: React.FunctionComponent = () => {
           <Box>Projects</Box>
         </Typography>
         {projects.map((project) => (
-          <Paper key={project.title}>
+          <Paper key={project.title} className={classes.paper}>
             <Accordion
               className={classes.accordion}
               expanded={expanded === project.title}
@@ -207,7 +212,9 @@ const Projects: React.FunctionComponent = () => {
                 aria-controls="panel1a-content"
                 id="panel1a-header"
                 className={classes.accordionContent}
-                expandIcon={<ExpandMoreIcon />}
+                expandIcon={
+                  <ExpandMoreIcon className={classes.expandMoreIcon} />
+                }
               >
                 <Typography variant="h6" className={classes.accordionTitle}>
                   {project.title}

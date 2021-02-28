@@ -68,8 +68,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   chipsContent: {
-    fontSize: 14,
-    fontWeight: 800,
+    fontWeight: 400,
   },
 }));
 

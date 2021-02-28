@@ -7,13 +7,11 @@ import {
   Card,
   CardHeader,
   CardContent,
-  CardMedia,
   CardActionArea,
   GridList,
   GridListTile,
   Zoom,
   useMediaQuery,
-  Tooltip,
 } from "@material-ui/core";
 import { makeStyles, Theme } from "@material-ui/core/styles";
 import naturewebp from "../images/nature.webp";
@@ -24,6 +22,7 @@ import globewebp from "../images/globe.webp";
 import globejpg from "../images/globe.jpg";
 import bookswebp from "../images/books.webp";
 import booksjpg from "../images/books.jpg";
+import InterestsButton from "./InterestsButton";
 
 const useStyles = makeStyles((theme: Theme) => ({
   sectionContainer: {
@@ -49,16 +48,23 @@ const useStyles = makeStyles((theme: Theme) => ({
   card: {
     backgroundColor: "transparent",
   },
-  cardMedia: {
-    display: "block",
-    maxHeight: 426,
-    objectFit: "cover",
-  },
   gridList: {
     // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
     transform: "translateZ(0)",
   },
 }));
+
+export interface Interest {
+  id: number;
+  title: string;
+  webpImg: string;
+  img: string;
+  description: string;
+  state: {
+    val: boolean;
+    setter: React.Dispatch<React.SetStateAction<boolean>>;
+  };
+}
 
 const Interests: React.FunctionComponent = () => {
   const classes = useStyles();
@@ -71,7 +77,7 @@ const Interests: React.FunctionComponent = () => {
     { noSsr: true }
   );
 
-  const content = [
+  const content: Array<Interest> = [
     {
       id: 1,
       title: "Traveling",
@@ -156,43 +162,30 @@ const Interests: React.FunctionComponent = () => {
             cols={isLessThanXs ? 1 : 2}
             className={classes.gridList}
           >
-            {content.map((tile, i) => (
-              <GridListTile key={tile.id}>
+            {content.map((interest) => (
+              <GridListTile key={interest.id}>
                 <Card elevation={0} className={classes.card}>
                   <CardActionArea
-                    onClick={() => tile.state.setter(!tile.state.val)}
+                    onClick={() => interest.state.setter(!interest.state.val)}
                   >
                     <>
-                      {tile.state.val ? (
-                        <Tooltip
-                          title={
-                            <Typography variant="caption">Click Me</Typography>
-                          }
-                          interactive
-                          arrow
-                          placement={i % 2 === 0 ? "left" : "right"}
-                        >
-                          <CardMedia
-                            component="picture"
-                            className={classes.cardMedia}
-                          >
-                            <source srcSet={tile.webpImg} type="image/webp" />
-                            <img src={tile.img} alt="Describing interests" />
-                          </CardMedia>
-                        </Tooltip>
+                      {interest.state.val ? (
+                        <InterestsButton interest={interest} />
                       ) : (
                         <Zoom
-                          in={!tile.state.val}
+                          in={!interest.state.val}
                           style={{
-                            transitionDelay: !tile.state.val ? "300ms" : "0ms",
+                            transitionDelay: !interest.state.val
+                              ? "300ms"
+                              : "0ms",
                           }}
                         >
                           <Typography
                             variant="h6"
                             className={classes.sectionContent}
                           >
-                            <CardHeader title={tile.title} />
-                            <CardContent>{tile.description}</CardContent>
+                            <CardHeader title={interest.title} />
+                            <CardContent>{interest.description}</CardContent>
                           </Typography>
                         </Zoom>
                       )}

@@ -238,7 +238,7 @@ const Projects: React.FunctionComponent = () => {
                 <>
                   <Divider />
                   <AccordionActions className={classes.accordionActions}>
-                    <LinkTo to={project.link} title="Info" />
+                    <LinkTo to={project.link} title="Read More" />
                   </AccordionActions>
                 </>
               )}

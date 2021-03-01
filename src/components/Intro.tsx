@@ -5,11 +5,6 @@ import { makeStyles, Theme } from "@material-ui/core/styles";
 import Typewriter from "./Typewriter";
 
 const useStyles = makeStyles((theme: Theme) => ({
-  background: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  },
   homeTitle: {
     fontWeight: 800,
     textAlign: "center",
@@ -22,16 +17,13 @@ const useStyles = makeStyles((theme: Theme) => ({
     textAlign: "left",
     color: theme.palette.primary.main,
   },
-  boxText: {
-    paddingBottom: theme.spacing(2),
-  },
 }));
 
 const Intro: React.FunctionComponent = () => {
   const classes = useStyles();
 
   return (
-    <Box className={classes.background}>
+    <Box>
       <Container>
         <Typography variant="h4" className={classes.homeTitle}>
           <Typewriter
@@ -42,13 +34,13 @@ const Intro: React.FunctionComponent = () => {
           />
         </Typography>
         <Typography variant="h6" className={classes.homeContent}>
-          <Box className={classes.boxText}>
+          <Box component="p">
             Hi, I'm Stelios! This is a space for me to present my professional
             and personal interests and also spill my thoughts. I'm passionate
             about Software Engineering, traveling, photography and pushing my
             curiosity's limits.
           </Box>
-          <Box className={classes.boxText}>
+          <Box component="p">
             This project is a result of a goal I had in 2020, to create a
             portfolio website to display my coding projects, and to create a
             personal website where I could post about all kinds of things I find
@@ -56,10 +48,11 @@ const Intro: React.FunctionComponent = () => {
             the professional as I believe they're an interweaved aspect of our
             lives.
           </Box>
-          <Box className={classes.boxText}>
+          <Box component="p">
             Generally, I have quite a diverse set of interests, so I hope you
             can get something out of this, be it getting to know me or simply
-            hearing what I'm currently up to!
+            hearing what I'm currently up to! I'm still experimenting a lot with
+            this website so it will evolve over time!
           </Box>
         </Typography>
       </Container>

@@ -20,7 +20,6 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   boxText: {
     textAlign: "left",
-    paddingBottom: theme.spacing(2),
   },
 }));
 
@@ -34,20 +33,20 @@ const About: React.FunctionComponent = () => {
           <Box className={classes.homeTitle}>About me</Box>
         </Typography>
         <Typography variant="h6" className={classes.homeContent}>
-          <Box className={classes.boxText}>
-            I'm an experienced Fullstack Software Engineer that loves delivering
-            technical solutions to customer problems. Currently based in
-            Edinburgh, UK and working for Administrate, an Education Technology
+          <Box className={classes.boxText} component="p">
+            I'm an experienced Software Engineer that loves delivering technical
+            solutions to customer problems. Currently based in Edinburgh, UK and
+            working for Administrate, a cloud based SaaS Education Technology
             startup.
           </Box>
-          <Box className={classes.boxText}>
+          <Box className={classes.boxText} component="p">
             I've participated in a variety of projects helping companies
             orchestrate and promote their training. I work with teams to
             architect and deliver solutions across the stack, from the
             underlying infrastructure to the UI, with a soft spot for building
             robust, clean APIs.
           </Box>
-          <Box className={classes.boxText}>
+          <Box className={classes.boxText} component="p">
             I'm always looking for opportunities to expand my horizons,
             challenge myself and learn about new technologies.
           </Box>

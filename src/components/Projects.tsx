@@ -109,10 +109,19 @@ const Projects: React.FunctionComponent = () => {
   const projects: Array<ProjectContent> = [
     {
       title: "Data Pipeline",
-      description: `Led the R&D team in the delivery of a first iteration of a cloud
+      description: `Led the R&D team in the delivery of a first iteration of a serverless cloud
         based Data Pipeline to bulk sync data between the Administrate
         platform and third parties.`,
-      chips: ["Python", "AWS Lambda", "AWS S3", "AWS Fargate", "Docker"],
+      chips: ["Python", "AWS", "Docker", "MySQL"],
+    },
+    {
+      title: "E-commerce Platform",
+      description: `Overhauled and expanded an e-commerce GraphQL API in order to
+      reduce complexity and simplify building integrations by third parties.
+      Enforced a cleaner API schema through Schema First design 
+      while also promoting a clean architecture by following a modular pattern
+      to building a GraphQL Server.`,
+      chips: ["Node.js", "GraphQL", "Docker"],
     },
     {
       title: "Learning Management System",
@@ -140,14 +149,6 @@ const Projects: React.FunctionComponent = () => {
         "OpenID Connect",
         "OAuth 2.0",
       ],
-    },
-    {
-      title: "E-commerce Platform",
-      description: `Rebuilt an e-commerce GraphQL API in order to simplify
-      building integrations by enforcing a cleaner schema while also
-      increasing development speed by promoting a modular approach
-      to building a GraphQL server.`,
-      chips: ["Node.js", "GraphQL", "Docker"],
     },
     {
       title: "Miscellaneous",

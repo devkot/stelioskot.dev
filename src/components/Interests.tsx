@@ -87,8 +87,7 @@ const Interests: React.FunctionComponent = () => {
         countries and that's a good explanation of why I got the
         bug for traveling. I love exploring the unknown and making
         experiences while discovering different cultures and
-        observing their lifestyle.
-      `,
+        observing their lifestyle.`,
       state: {
         val: showTravelImg,
         setter: setShowTravelImg,
@@ -105,8 +104,7 @@ const Interests: React.FunctionComponent = () => {
         photography for a little over a year, after I got a DSLR
         camera. I love how subjective photography is and I think
         it's the closest we can get to seeing the world through
-        someone else's eyes.
-      `,
+        someone else's eyes.`,
       state: {
         val: showPhotographyImg,
         setter: setShowPhotographyImg,
@@ -122,8 +120,7 @@ const Interests: React.FunctionComponent = () => {
         the Lord of the Rings saga. However, I've recently
         started exploring different topics, ranging from classic
         literature to deeper ones like society or psychology
-        that I love to have long conversations about.
-      `,
+        that I love to have long conversations about.`,
       state: {
         val: showReadingImg,
         setter: setShowReadingImg,
@@ -141,8 +138,7 @@ const Interests: React.FunctionComponent = () => {
         mind and the body. Currently, I've been swimming but I
         always like mixing it up! Thankfully, living in Scotland
         there's always an idyllic walking route a stone's throw
-        away!
-      `,
+        away!`,
       state: {
         val: showActivitiesImg,
         setter: setShowActivitiesImg,

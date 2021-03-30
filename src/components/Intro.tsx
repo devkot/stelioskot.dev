@@ -41,18 +41,18 @@ const Intro: React.FunctionComponent = () => {
             curiosity's limits.
           </Box>
           <Box component="p">
-            This project is a result of a goal I had in 2020, to create a
-            portfolio website to display my coding projects, and to create a
-            personal website where I could post about all kinds of things I find
-            fascinating. As such, this website kind of blends the personal and
-            the professional as I believe they're an interweaved aspect of our
-            lives.
+            What drove me to build this project was a goal I had in 2020, to
+            create a portfolio website to display projects I've worked on, and
+            to create a personal website where I could post about anything I
+            find fascinating. As such, this website kind of blends the personal
+            and the professional as I believe they're an interweaved aspect of
+            our lives.
           </Box>
           <Box component="p">
-            Generally, I have quite a diverse set of interests, so I hope you
+            Generally, there's lots of things that make me tick, so I hope you
             can get something out of this, be it getting to know me or simply
             hearing what I'm currently up to! I'm still experimenting a lot with
-            this website so it will evolve over time!
+            this website, so it will evolve over time!
           </Box>
         </Typography>
       </Container>

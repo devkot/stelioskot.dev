@@ -107,13 +107,14 @@ const Projects: React.FunctionComponent = () => {
   ) => setExpanded(isExpanded ? panel : false);
 
   const projects: Array<ProjectContent> = [
-    {
-      title: "Data Pipeline",
-      description: `Led the R&D team in the delivery of a first iteration of a serverless cloud
-        based Data Pipeline to bulk sync data between the Administrate
-        platform and third parties.`,
-      chips: ["Python", "AWS", "Docker", "MySQL"],
-    },
+    // TODO - Reword this
+    // {
+    //   title: "Data Pipeline",
+    //   description: `Led the R&D team in the delivery of a first iteration of a serverless cloud
+    //     based Data Pipeline to bulk sync data between the Administrate
+    //     platform and third parties.`,
+    //   chips: ["Python", "AWS", "Docker", "MySQL"],
+    // },
     {
       title: "E-commerce Platform",
       description: `Overhauled and expanded an e-commerce GraphQL API in order to
@@ -121,7 +122,7 @@ const Projects: React.FunctionComponent = () => {
       Enforced a cleaner API schema through Schema First design 
       while also promoting a clean architecture by following a modular pattern
       to building a GraphQL Server.`,
-      chips: ["Node.js", "GraphQL", "Docker"],
+      chips: ["Node.js", "JavaScript", "GraphQL", "Docker"],
     },
     {
       title: "Learning Management System",
